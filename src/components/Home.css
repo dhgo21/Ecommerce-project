@@ -1,0 +1,124 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.home{
+    width: 100%;
+}
+.home .topbanner{
+    max-width: 100%;
+    height: 500px;
+    background: url("http://localhost:5173/images/slider.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 50px 60px;
+}
+
+.home .topbanner .contant{
+    width: 100%;
+    position: relative;
+    top: 100px;
+    left: 70px;
+}
+
+.home .topbanner .contant h3{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+}
+.home .topbanner .contant h2{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 47px;
+}
+
+.home .topbanner .contant p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+.home .topbanner .contant .link{
+    background-color:#fed700;
+    padding: 10px 40px;
+    border-radius: 10px;
+    font-family:cursive;
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    /* border: 2px solid black; */
+}
+.home .topbanner .contant .link:hover{
+    background-color: black;
+    color: white;
+    /* border: 2px solid white; */
+}
+
+.trending{
+    padding: 20px 30px;
+    width: 100%;
+}
+.trending .container{
+    max-width: 100%;
+    display: flex;
+}
+.trending .container .leftbox{
+    padding: 10px 20px;
+    width: 75%;
+}
+.trending .container .leftbox .header{
+    padding: 10px 10px;
+    display: flex;
+    max-width: 100%;
+    background: #f6f7f8 ;
+    justify-content: space-between;
+}
+.trending .container .leftbox .header .heading{
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #232323;
+}
+.trending .container .leftbox .header .cate{
+    display: flex;
+    margin-top: 5px;
+}
+.trending .container .leftbox .header .cate h3{
+    text-transform: capitalize;
+    margin-right: 10px;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.trending .container .leftbox .header .cate h3:hover{
+    color: #fed700;
+}
+.trending .container .leftbox .products{
+    max-width: 100%;
+}
+.trending .container .leftbox .products .container{
+    max-width: 100%;
+    display: flex;
+    flex-wrap: wrap; 
+}
+.trending .container .leftbox .products .container .box{
+    width: 210px;
+    height: 295px;
+    padding: 10px 10px ;
+    border: 2px solid #d7d8da;
+    margin-top: 20px;
+    margin-left: 20px;
+    overflow:  hidden;
+    border-radius: 5px;
+}
+.trending .container .leftbox .products .container .box .imgbox{
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
+.container .box .imgbox img{
+    width: 190px;
+    height: 190px;
+    object-fit: cover;
+}
