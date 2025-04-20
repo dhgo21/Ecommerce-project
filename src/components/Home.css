@@ -2,7 +2,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: sans-serif;
-    box-sizing: border-box;
+    /* box-sizing: border-box; */
     
 }
 .home{
@@ -18,7 +18,7 @@ body{
 }
 
 .home .topbanner .contant{
-    width: 100%;
+    width: 90%;
     position: relative;
     top: 100px;
     left: 70px;
@@ -66,7 +66,7 @@ body{
 }
 .trending .container .leftbox{
     padding: 10px 20px;
-    max-width: 100%;
+    width: 3400px;
     /* border: 2px solid yellow; */
 }
 .trending .container .leftbox .header{
@@ -109,7 +109,7 @@ body{
     /* border: 10px solid blue; */
 }
 .trending .container .leftbox .products .container .box{
-    width: 246px;
+    width: 260px;
     /* height: 305px; */
     padding: 10px 10px ;
     border: 2px solid #d7d8da;
@@ -135,22 +135,23 @@ body{
     width: 150px;
     height: 150px;
     object-fit: cover;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     margin-right: 5px;
     margin-left: 30px;
     margin-top: 10px;
     border-radius: 10px;
+    mix-blend-mode:multiply;
 }
 
 .container .icon{
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    margin-left: 30%;
+    margin-left: 34%;
     transition: 0.5s;
 }
 .container .box:hover .imgbox .icon{
-    margin-left: -0.1%;
+    margin-left: 4%;
 }
 .container .icon .iconbox{
     padding: 10px 10px;
@@ -161,6 +162,7 @@ body{
     background: #fff;
     transition: 0.5s;
     cursor: pointer;
+    /* border: 2px solid black; */
 }
 .container .icon .iconbox:hover{
     color: #fff;
@@ -210,10 +212,15 @@ body{
     width: 100%;
     border: 4px solid #f6f7f8;
 }
+.rightbox .container .testimonial:hover{
+    box-shadow: 0px 0px 10px 0px black;
+    transition: 0.4s;
+    border-radius: 10px;
+}
 .rightbox .container .testimonial .head{
     width: 100%;
     padding: 10px 10px; 
-    background: #f6f7f8;
+    background: rgb(247, 244, 244);
 }
 .rightbox .container .testimonial .head h3{
    text-align: center;
@@ -242,14 +249,20 @@ body{
  }
 
  .newsletter{
-    background: #f6f7f8;
+    background: rgb(247, 244, 244);
     margin-top: 50px;
+    margin-bottom: 50px;
     padding: 10px 0px;
     border-radius: 10px;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+ }
+ .newsletter:hover{
+    box-shadow: 0px 0px 10px 0px black;
+    transition: 0.4s;
+    border-radius: 10px;
  }
  .newsletter .heading h3{
     letter-spacing: 1px;
@@ -293,4 +306,64 @@ body{
     cursor: pointer;
  }
 
+ .slider{
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    /* border: 2px solid rgb(202, 202, 204); */
+    border-radius: 10px;
+    scrollbar-width: none;
+    margin-top: 40px;
+    box-shadow: 0px 0px 7px 0px black;
+    cursor: pointer;
+ }
+ .slides{
+    display: flex;
+    width: calc(100% * 4);;
+    padding: 0px;
+    /* animation: scrollStep 8s steps(4) infinite; */
+    animation: scrollStep 12s linear infinite;
+}
+
+.slide{
+    flex: 0 0 100%;
+    text-align: center;
+}
+		
+.slider img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* margin-right: 10px; */
+}
+
+@keyframes scrollStep {
+    0% {
+      transform: translateX(0%);
+    }
+    20% {
+      transform: translateX(0%);
+    }
+    25% {
+      transform: translateX(-100%);
+    }
+    45% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(-200%);
+    }
+    70% {
+      transform: translateX(-200%);
+    }
+    75% {
+      transform: translateX(-300%);
+    }
+    95% {
+      transform: translateX(-300%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
 /* 1.30 */

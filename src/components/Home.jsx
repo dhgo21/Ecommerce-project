@@ -49,7 +49,7 @@ function Home() {
                 <>
                 <div className="box">
                   <div className="imgbox">
-                    <img src={curr.image} alt=''></img>
+                      <img src={curr.image} alt=''></img>
                     <div className="icon">
                       <div className="iconbox">
                         <FaRegEye />
@@ -107,6 +107,14 @@ function Home() {
                     <FaInstagram />
                     <FaYoutube />
                   </div>
+                </div>
+              </div>
+              <div className="slider">
+                <div className="slides">
+                  <div className="slide"><img src="/public/images/bottomrightslider.svg" alt="slide1"></img></div>
+                  <div className="slide"><img src="/public/images/bottomrightslider1.svg" alt="slide2"></img></div>
+                  <div className="slide"><img src="/public/images/bottomrightslider2.svg" alt="slide3"></img></div>
+                  <div className="slide"><img src="/public/images/bottomrightslider3.svg" alt="slide4"></img></div>
                 </div>
               </div>
             </div>

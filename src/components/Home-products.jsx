@@ -42,7 +42,7 @@ const Homeproducts=
     },
     {
         id:6,
-        name:"OnePlus Nord CE Lite 5G",
+        name:"OnePlus Nord CE 4 Lite 5G",
         price:"₹17,999/-",
         image:'public/images/home-products-images/image6.webp',
         cat:'',
