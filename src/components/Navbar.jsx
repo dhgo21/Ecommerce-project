@@ -24,7 +24,7 @@ function Navbar() {
                 <img src="/public/images/smlogo.png"></img>
             </div>
             <div className="searchbox">
-                <input type="text" value="" placeholder='Search'></input>
+                <input type="text" placeholder='Search'></input>
                 <button><FaSearch /></button>
             </div>
             {

@@ -1,9 +1,15 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import { Link } from 'react-router'
 import Homeproducts from './Home-products'
 import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";;
+import { IoCartOutline } from "react-icons/io5";
 function Home() {
+  // product category
+  const [newproduct,setnewproduct]=useState([])
+  const [featureproduct,setfeatureproduct]=useState([])
+  const [topproduct,settopproduct]=useState([])
+  //trending product
   const [tproducts,settproducts]=useState(Homeproducts)
   function filtercate(x)
   {
@@ -16,6 +22,34 @@ function Home() {
   function aaproducts()
   {
     settproducts(Homeproducts)
+  }
+
+
+
+  //product type
+  useEffect(()=>{
+    productcategory()
+  })
+  function productcategory()
+  { 
+
+    // new product
+    const newcategory=Homeproducts.filter((curr)=>{
+      return curr.type==="new"
+    })
+    setnewproduct(newcategory)
+
+    // feature product
+    const featurecategory=Homeproducts.filter((curr)=>{
+      return curr.type==="feature"
+    })
+    setfeatureproduct(featurecategory)
+
+    // top product
+    const topcategory=Homeproducts.filter((curr)=>{
+      return curr.type==="top"
+    })
+    settopproduct(topcategory)
   }
   return (
     <>
@@ -70,6 +104,7 @@ function Home() {
             })
             }    
               </div>
+              <button className='showmorebttn'>Show More</button>
             </div>
           </div>
           <div className="rightbox">
@@ -120,7 +155,114 @@ function Home() {
             </div>
           </div>
         </div>
+        <div className="banners">
+          <div className="container">
+            <div className="leftbox">
+              <div className="box">
+                <img src='/public/images/sliderimg1.svg'></img>
+              </div>
+              <div className="box">
+                <img src='/public/images/sliderimg2.svg'></img>
+              </div>
+            </div>
+            <div className="rightbox">
+              <div className="top">
+                <img src='/public/images/sliderimg3.svg'></img>
+                <img id="sliderimg4"src='/public/images/sliderimg4.svg'></img>
+              </div>
+              <div className="bottom">
+                <img src='/public/images/sliderimg5.svg'></img>
+                <img id="slider6" src='/public/images/sliderimg6.png'></img>
+              </div>
+            </div>
+          </div>
         </div>
+        <div className="producttype">
+          <div className="container">
+            <div className="box">
+              <div className="header"> 
+                <h2>New Product</h2>
+              </div>
+              {
+                newproduct.map((curr)=>{
+                  return(
+                    <>
+                      <div className="productbox">
+                        <div className="imgbox">
+                          <img src={curr.image}></img>
+                        </div>
+                        <div className="detail">
+                          <h3>{curr.name}</h3>
+                          <p>{curr.price}</p>
+                          <div className="icons">
+                            <button><FaRegEye /></button>
+                            <button><FaRegHeart /></button>
+                            <button><IoCartOutline /></button>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
+            </div>
+            <div className="box">
+              <div className="header"> 
+                <h2>Featured Product</h2>
+              </div>
+              {
+                featureproduct.map((curr)=>{
+                  return(
+                    <>
+                      <div className="productbox">
+                        <div className="imgbox">
+                          <img src={curr.image}></img>
+                        </div>
+                        <div className="detail">
+                          <h3>{curr.name}</h3>
+                          <p>{curr.price}</p>
+                          <div className="icons">
+                            <button><FaRegEye /></button>
+                            <button><FaRegHeart /></button>
+                            <button><IoCartOutline /></button>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
+            </div>
+            <div className="box">
+              <div className="header"> 
+                <h2>Top Product</h2>
+              </div>
+              {
+                topproduct.map((curr)=>{
+                  return(
+                    <>
+                      <div className="productbox">
+                        <div className="imgbox">
+                          <img src={curr.image}></img>
+                        </div>
+                        <div className="detail">
+                          <h3>{curr.name}</h3>
+                          <p>{curr.price}</p>
+                          <div className="icons">
+                            <button><FaRegEye /></button>
+                            <button><FaRegHeart /></button>
+                            <button><IoCartOutline /></button>
+                          </div>
+                        </div>
+                      </div>
+                    </>
+                  )
+                })
+              }
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
     </>
   )
