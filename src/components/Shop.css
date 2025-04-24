@@ -1,0 +1,65 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.shop{
+    width: 100%;
+    padding: 20px 30px;
+}
+.shop h2{
+    letter-spacing: 2px;
+    color: #232323;
+    font-size: 32px;
+    font-weight: 300;
+}
+.shop p{
+    margin-top: 5px;
+    color: #8a8a8a;
+    font-size: 14px;
+    font-weight: 600;
+}
+.shop .container{
+    max-width: 100%;
+    display: flex;
+    margin-top: 20px;
+}
+.shop .container .leftbox{
+    width: 30%;
+}
+
+.shop .container .leftbox .category{
+    border: 3px solid #f6f6f6;
+    width: 116px;
+}
+
+.shop .container .leftbox .category .header{
+    padding: 10px 20px;
+    max-width: 100px;
+    background: #f6f6f6;
+}
+
+.shop .container .leftbox .category .header h3{
+    font-size: 16px;
+    color: #232323;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    width: 160px;
+    text-align: center;
+}
+
+.shop .container .leftbox .category .box{
+    margin-top: 10px;
+    width: 10%;
+}
+
+.shop .container .leftbox .category .box ul{
+    max-width: 100%;
+}
+
+.shop .container .leftbox .category .box ul li{
+    list-style: none;
+    margin-left: 20px;
+}

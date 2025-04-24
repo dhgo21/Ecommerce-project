@@ -36,8 +36,9 @@
     height: 50px;
     width: 175px;
     cursor: pointer;
-    border-radius: 10px;
-    box-shadow: 0px 0px 4px 0px black;
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 0px 4px 0px black; */
+    mix-blend-mode: multiply;
 }
 .header .midheader .searchbox input{
     padding: 10px 10px;

@@ -5,7 +5,7 @@ const Homeproducts=
         name:"ASUS Vivobook Go 14",
         price:"₹29,999/-",
         image:'public/images/home-products-images/image1.webp',
-        cat:'',
+        cat:'Laptop',
         type:"new"
     },
     {
@@ -13,7 +13,7 @@ const Homeproducts=
         name:"Crucial NVMe M.2 SSD",
         price:"₹5,646/-",
         image:'public/images/home-products-images/image2.webp',
-        cat:'',
+        cat:'Drives',
         type:"new"
     },
     {
@@ -21,7 +21,7 @@ const Homeproducts=
         name:"Apple iPhone 15 Pro",
         price:"₹55,999/-",
         image:'public/images/home-products-images/image3.webp',
-        cat:'',
+        cat:'Mobiles',
         type:"new"
     },
     {
@@ -29,7 +29,7 @@ const Homeproducts=
         name:"Seagate 2TB HDD",
         price:"₹7,449/-",
         image:'public/images/home-products-images/image4.webp',
-        cat:'',
+        cat:'Drives',
         type:"new"
     },
     {
@@ -37,7 +37,7 @@ const Homeproducts=
         name:"Zebronics transformer-M Mouse",
         price:"₹299/-",
         image:'public/images/home-products-images/image5.webp',
-        cat:'',
+        cat:'Mouse',
         type:"feature"
     },
     {
@@ -45,7 +45,7 @@ const Homeproducts=
         name:"OnePlus Nord CE 4 Lite 5G",
         price:"₹17,999/-",
         image:'public/images/home-products-images/image6.webp',
-        cat:'',
+        cat:'Mobiles',
         type:"feature"
     },
     {
@@ -53,7 +53,7 @@ const Homeproducts=
         name:"Potronics 12W Bluetooth Speaker",
         price:"₹949/-",
         image:'public/images/home-products-images/image7.webp',
-        cat:'',
+        cat:'Speakers',
         type:"feature"
     },
     {
@@ -61,7 +61,7 @@ const Homeproducts=
         name:"boAt 22.5W Dual Port Charger",
         price:"₹549/-",
         image:'public/images/home-products-images/image8.webp',
-        cat:'',
+        cat:'Chargers',
         type:"feature"
     },
     {
@@ -69,7 +69,7 @@ const Homeproducts=
         name:"Boult Audio True Wireless Earbuds",
         price:"₹999/-",
         image:'public/images/home-products-images/image9.webp',
-        cat:'',
+        cat:'Earbuds',
         type:"top"
     },
     {
@@ -77,7 +77,7 @@ const Homeproducts=
         name:"Fire-Boltt Ninja Call Pro Plus Smart Watch",
         price:"₹1,199/-",
         image:'public/images/home-products-images/image10.webp',
-        cat:'',
+        cat:'Smart Watches',
         type:"top"
     },
     {
@@ -85,7 +85,7 @@ const Homeproducts=
         name:"LONGWAY Kiger Ceiling Fan",
         price:"₹1,199/-",
         image:'public/images/home-products-images/image11.webp',
-        cat:'',
+        cat:'Fan',
         type:"top"
     },
     {
@@ -93,7 +93,7 @@ const Homeproducts=
         name:"Wipro Orion 6w LED Table Lamp",
         price:"₹799/-",
         image:'public/images/home-products-images/image12.webp',
-        cat:'',
+        cat:'Night Lamps',
         type:"top"
     },
 ]

@@ -40,3 +40,40 @@
 .footer .container .leftbox .box .detail p{
     font-size: 12px;
 }
+
+.footer .container .rightbox{
+    width: 100%;
+    padding: 20px 20px;
+}
+.footer .container .rightbox .top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.footer .container .rightbox img{
+    width: 200px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    mix-blend-mode: multiply;
+}
+
+.footer .container .rightbox .bottom{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+    letter-spacing: 1px;
+    
+}
+.footer .container .rightbox .bottom p{
+    color: rgb(157, 157, 157);
+    margin-top: 6px;
+}
+.footer .container .rightbox .bottom p:hover{
+    cursor: pointer;
+    color:red;
+}

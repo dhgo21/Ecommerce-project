@@ -47,7 +47,36 @@ function Fotter() {
                 </div>
             </div>
             <div className="rightbox">
-                
+                <div className="top">
+                    <div className="logo">
+                        <img src='/public/images/smlogo.png'></img>
+                    </div>
+                    <div className="para">
+                        <p>Shop smarter, not harder. We bring clean design, quality choices, and a seamless experience—so you get what you need, and nothing you don’t.</p>
+                    </div>
+                </div>
+                <div className="bottom">
+                    <div className="account">
+                        <h4>Your Account</h4>
+                        <p>About Us</p>
+                        <p>Account</p>
+                        <p>Payment</p>
+                        <p>Sales</p>
+                    </div>
+                    <div className="Products">
+                        <h4>Products</h4>
+                        <p>Delivery</p>
+                        <p>Track Order</p>
+                        <p>New Product</p>
+                        <p>Old product</p>
+                    </div>
+                    <div className="contact">
+                        <h4>Contact Us</h4>
+                        <p>Jaipur, India</p>
+                        <p>+91 0101010101</p>
+                        <p>swiftmart@gmail.com</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
