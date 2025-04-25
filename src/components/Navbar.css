@@ -33,12 +33,13 @@
     align-items: center;
 }
 .header .midheader .logo img{
-    height: 50px;
+    height: 70px;
     width: 175px;
     cursor: pointer;
     /* border-radius: 10px; */
     /* box-shadow: 0px 0px 4px 0px black; */
     mix-blend-mode: multiply;
+    margin-left: 10px;
 }
 .header .midheader .searchbox input{
     padding: 10px 10px;
@@ -63,20 +64,34 @@
     margin-right: 30px;
     transition: 0.5s;
 }
+.header .midheader .searchbox button:hover {
+    box-shadow: 0px 0px 5px 1px;
+    transition: 0.5s;
+}
 
 .header .midheader .user{
     display: flex;
     margin-right: 30px;
-
+    /* height: 30px; */
+    /* width: 70px; */
 }
 .header .midheader .user .icon{
     margin-right: 10px;
+    font-size: 23px;
+    margin-top: 2px;
+    cursor: pointer;
 }
 .header .midheader .bttn button{
     border: none;
     outline: none;
     font-size: 16px;
     background: none;
+    cursor: pointer;
+    font-size: 24px;
+}
+.midheader .carticon .cart{
+    height: 30px;
+    width: 30px;
     cursor: pointer;
 }
 
@@ -98,7 +113,7 @@
 }
 .header .lastheader .nav ul{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .header .lastheader .nav ul li{
     list-style: none;

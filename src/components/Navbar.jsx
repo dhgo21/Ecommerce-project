@@ -4,8 +4,10 @@ import { LuLogIn } from "react-icons/lu";
 import { Link } from "react-router";
 import { useAuth0 } from "@auth0/auth0-react";
 import "./Navbar.css"
+import { BsCart4 } from "react-icons/bs";
 import { CiLogout } from "react-icons/ci";
-function Navbar() {
+import Badge from '@mui/material/Badge';
+function Navbar({search,setsearch,searchproduct}) {
     const { loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
 
   return (
@@ -24,8 +26,13 @@ function Navbar() {
                 <img src="/public/images/smlogo.png"></img>
             </div>
             <div className="searchbox">
-                <input type="text" placeholder='Search'></input>
-                <button><FaSearch /></button>
+                <input type="text" value={search} placeholder='Search' onChange={(e)=>setsearch(e.target.value)}></input>
+                <button onClick={searchproduct}><FaSearch /></button>
+            </div>
+            <div className="carticon">
+                <Badge badgeContent={4} color="primary" className='badge'>
+                    <Link to="/cart" ><BsCart4 className='cart'/></Link>
+                </Badge>
             </div>
             {
                 isAuthenticated ? 
@@ -76,7 +83,6 @@ function Navbar() {
                 <ul>
                     <li><Link to="/" className="link">Home</Link></li>
                     <li><Link to="/shop" className="link">Shop</Link></li>
-                    <li><Link to="/collection" className="link">Collection</Link></li>
                     <li><Link to="/about" className="link">About</Link></li>
                     <li><Link to="/contact" className="link">Contact</Link></li>
                 </ul>

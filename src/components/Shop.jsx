@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Shop.css"
-function Shop() {
+import { FaRegEye, FaRegHeart} from "react-icons/fa";
+function Shop({shop,Filter,allcatefilter}) {
   return (
     <>
     <div className="shop">
@@ -14,16 +15,58 @@ function Shop() {
                     </div>
                     <div className="box">
                         <ul>
-                            <li>Laptops</li>
-                            <li>Drives</li>
-                            <li>Mobiles</li>
-                            <li>Mouse</li>
-                            <li>Speakers</li>
-                            <li>Chargers</li>
-                            <li>Smart Watches</li>
-                            <li>Fans</li>
-                            <li>Night Lamps</li>
+                            <li onClick={()=>allcatefilter()}>All</li>
+                            <li onClick={()=>Filter("laptop")}>Laptops</li>
+                            <li onClick={()=>Filter("drive")}>Drives</li>
+                            <li onClick={()=>Filter("mobile")}>Mobiles</li>
+                            <li onClick={()=>Filter("mouse")}>Mouse</li>
+                            <li onClick={()=>Filter("speaker")}>Speakers</li>
+                            <li onClick={()=>Filter("charger")}>Chargers</li>
+                            <li onClick={()=>Filter("watche")}>Smart Watches</li>
+                            <li onClick={()=>Filter("fans")}>Fans</li>
+                            <li onClick={()=>Filter("Night Lamps")}>Night Lamps</li>
                         </ul>
+                    </div>
+                </div>
+                <div className="banner">
+                    <div className="img">
+                        <img src='/public/images/bottombanner1.svg'></img>
+                    </div>
+                </div>
+            </div>
+            <div className="rightbox">
+                <div className="topbanner">
+                    <img src='/public/images/shoptopbanner.svg'></img>
+                </div>
+                <div className="productbox">
+                    <h2>Shop Product</h2>
+                    <div className="productcontainer">
+                        {
+                            shop.map((curr,index)=>{
+                                return (
+                                    <>
+                                        <div className="box">
+                                            <div className="imgbox">
+                                                <img src={curr.image} key={index}></img>
+                                               <div className="icon">
+                                                    <div className="iconbox">
+                                                        <FaRegEye />
+                                                    </div>
+                                                    <div className="iconbox">
+                                                        <FaRegHeart />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div className="info">
+                                                <h4>{curr.name}</h4>
+                                                <p>{curr.price}</p>
+                                                <button className='btn '>Add To Cart</button>
+                                            </div>
+                                        </div>
+                                    </>
+                                )
+                            })
+                        }
                     </div>
                 </div>
             </div>

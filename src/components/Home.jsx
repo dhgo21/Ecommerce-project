@@ -2,13 +2,17 @@ import React, { useEffect, useState } from 'react'
 import "./Home.css"
 import { Link } from 'react-router'
 import Homeproducts from './Home-products'
-import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";;
+import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 function Home() {
   // product category
+  
   const [newproduct,setnewproduct]=useState([])
   const [featureproduct,setfeatureproduct]=useState([])
   const [topproduct,settopproduct]=useState([])
+
+  // for paging
+  const [visibleCount, setVisibleCount] = useState(12);
   //trending product
   const [tproducts,settproducts]=useState(Homeproducts)
   function filtercate(x)
@@ -17,11 +21,13 @@ function Home() {
       return curr.type===x
     })
     settproducts(filterproduct)
+    setVisibleCount(4)
   }
 
   function aaproducts()
   {
     settproducts(Homeproducts)
+    setVisibleCount(12)
   }
 
 
@@ -29,7 +35,7 @@ function Home() {
   //product type
   useEffect(()=>{
     productcategory()
-  })
+  },[])
   function productcategory()
   { 
 
@@ -51,6 +57,10 @@ function Home() {
     })
     settopproduct(topcategory)
   }
+  const handleShowMore = () => {
+    setVisibleCount(prevCount => prevCount + 12); // increase count by 12 each time
+  };
+  const visibleproducts = tproducts.slice(0, visibleCount);
   return (
     <>
     <div className="home">
@@ -78,10 +88,9 @@ function Home() {
             <div className="products">
               <div className="container">
               {
-            tproducts.map((curr)=>{
+            visibleproducts.map((curr)=>{
               return(
-                <>
-                <div className="box">
+                <div className="box" key={curr.id}> 
                   <div className="imgbox">
                       <img src={curr.image} alt=''></img>
                     <div className="icon">
@@ -99,12 +108,17 @@ function Home() {
                     <button className='btn '>Add To Cart</button>
                   </div>
                 </div>
-                </>
               )
             })
             }    
-              </div>
-              <button className='showmorebttn'>Show More</button>
+            </div>
+              {
+                visibleCount < Homeproducts.length ? (
+                  <button className='showmorebttn' onClick={handleShowMore}>Show More</button>
+                ) : (
+                  <button className='showmorebttn' onClick={() => setVisibleCount(12)}>Show Less</button>
+                )
+              }
             </div>
           </div>
           <div className="rightbox">
@@ -186,8 +200,7 @@ function Home() {
               {
                 newproduct.map((curr)=>{
                   return(
-                    <>
-                      <div className="productbox">
+                      <div className="productbox" key={curr.id}>
                         <div className="imgbox">
                           <img src={curr.image}></img>
                         </div>
@@ -201,7 +214,6 @@ function Home() {
                           </div>
                         </div>
                       </div>
-                    </>
                   )
                 })
               }
@@ -213,8 +225,7 @@ function Home() {
               {
                 featureproduct.map((curr)=>{
                   return(
-                    <>
-                      <div className="productbox">
+                      <div className="productbox" key={curr.id}>
                         <div className="imgbox">
                           <img src={curr.image}></img>
                         </div>
@@ -228,7 +239,6 @@ function Home() {
                           </div>
                         </div>
                       </div>
-                    </>
                   )
                 })
               }
@@ -240,8 +250,7 @@ function Home() {
               {
                 topproduct.map((curr)=>{
                   return(
-                    <>
-                      <div className="productbox">
+                      <div className="productbox" key={curr.id}>
                         <div className="imgbox">
                           <img src={curr.image}></img>
                         </div>
@@ -255,7 +264,6 @@ function Home() {
                           </div>
                         </div>
                       </div>
-                    </>
                   )
                 })
               }
