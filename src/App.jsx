@@ -6,6 +6,9 @@ import Fotter from './components/Fotter'
 import Homeproducts from './components/Home-products'
 import { useState } from 'react'
 function App() {
+  //add to cart
+  const [cart,setcart]=useState([])
+
   const [shop,setshop]=useState(Homeproducts)
   const [search,setsearch]=useState('')
   //shop category filter
@@ -35,16 +38,34 @@ function App() {
       return x.cat===search
       })
       setshop(searchfilter)
-      setsearch('')
+      // setsearch('')
     
   }
 }
+  //add to cart
   
+  function addtocart(product)
+  {
+    
+    const exist=cart.find((x)=>{
+      return x.id===product.id
+    })
+    if(exist)
+    {
+      alert("This product is already Added to cart")
+    }
+    else
+    {
+      setcart([...cart,{...product, qty:1}])
+      alert("Product Added to Cart!.")
+    }
+  }
+  console.log(cart); 
   return (
     <>
       <BrowserRouter>
         <Navbar search={search} setsearch={setsearch} searchproduct={searchproduct}/>
-        <Routing shop={shop} Filter={Filter} allcatefilter={allcatefilter}/>
+        <Routing setcart={setcart} cart={cart} shop={shop} Filter={Filter} allcatefilter={allcatefilter} addtocart={addtocart}/>
         <Fotter />
       </BrowserRouter>
     </>

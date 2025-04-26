@@ -1,0 +1,194 @@
+*
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+    box-sizing: border-box;
+}
+.cart{
+    width: 100%;
+    padding: 20px 30px;
+    height: 100%;
+}
+.cart h3{
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #232323;
+    font-weight: normal;
+}
+.cart-container{
+    display: flex;
+}
+.cart .emptycart{
+    width: 100%;
+    align-items: center;
+}
+.cart .emptycart h2{
+    
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 18px;
+    color: #232323;
+    letter-spacing: 1px;
+}
+
+.cart .emptycart button{
+    
+    margin-left: 45%;
+    padding: 10px 30px;
+    margin-top: 10px;
+    background: #fed700;
+    color: #cd176c;
+    border: none;
+    outline: none;
+    border: 1px solid #fed700;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.cart .emptycart button:hover{
+    /* transition: 0.4s;  */
+    box-shadow: 0px 0px 2px 0px black;
+    
+}
+.cart .container{
+    max-width: 100%;
+    padding: 10px 20px;
+}
+
+.cart .container .box{
+    width: 100%;
+    display: flex;
+    border-bottom: 2px solid #dedcdc;
+    height: 150px;
+    margin-top: 10px;
+    justify-content: space-around;
+}
+
+.cart .container .box .imgbox{
+    width: 200px;
+    height: 50px;
+}
+
+.cart .container .box .imgbox img{
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.cart .container .box .detail{
+    display: flex;
+    width: 100%;
+}
+.cart .container .box .detail .info{
+    margin-top: 20px;
+    margin-left: 30px;
+}
+.cart .container .box .detail .info h4{
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #818181;
+}
+.cart .container .box .detail .info h3{
+    margin-top: 10px;
+    color: black;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+}
+.cart .container .box .detail .info p{
+    margin-top: 10px;
+    color: black;
+    font-size: 17px;
+}
+.cart .container .box .detail .quantity{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid green; */
+    margin-bottom: 20px;
+}
+.cart .container .box .detail .quantity button{
+    padding: 10px 20px;
+    color: white;
+    border: none;
+    outline: none;
+    background: black;
+    font-weight: bold;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.cart .container .box .detail .quantity input{
+    height: 30px;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    outline: none;
+    border: 2px solid #afafaf;
+    color: #afafaf;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 3px;
+    width: 100px;
+    margin: 0px 5px;
+}
+
+.cart .container .box .icon{
+    /* border: 2px solid green; */
+    margin: 10px;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.cart .bottom .total{
+    border: 2px solid rgb(243, 169, 169);
+    width: 14%;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgb(247, 71, 71);
+    text-align: center;
+    /* margin: auto; */
+    cursor: pointer;
+}
+.cart .bottom .total:hover{
+    box-shadow: 0px 0px 2px 2px rgb(17, 16, 16);
+    transition: 0.5s;
+}
+.cart .bottom .total h4{
+    font-size: 16px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.cart .bottom .bottomwork{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 0px 20px;
+}
+
+.cart .bottom .bottomwork button{
+    font-size: 20px;
+    width: 180px;
+    cursor: pointer;
+    border-radius: 10px;
+    background: black;
+    color: white;
+}
+
+.cart .bottom .bottomwork button:hover{
+    box-shadow: 0px 0px 2px 2px rgb(243, 132, 132);
+    transition: 0.5s;
+}

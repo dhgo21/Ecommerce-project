@@ -201,3 +201,75 @@
     box-shadow: 0px 0px 5px 0px black;
     color: rgb(235, 61, 61);
 }
+
+.productdetail{
+    width: 900px;
+    height: 400px;
+    position: fixed;
+    margin-left: 340px;
+    top: 140px;
+    z-index: 7;
+    background: #ffff;
+    box-shadow: 0px 0px 2px 0px black;
+    border-radius: 10px;
+    border: 1px solid rgb(74, 74, 74);
+    padding: 20px 30px;
+}
+.productdetail .closebtn{
+    float: right;
+    border: none;
+    outline: none;
+    background: none;
+    color: black;
+    cursor: pointer;
+    font-size: 23px;
+}
+.productdetail .container{
+    width: 100%;
+    display: flex;
+}
+.productdetail .container .imgbox{
+    padding: 10px 10px;
+    /* background: #b8b8b8; */
+    border: 2px solid #ece8e8;
+    border-radius: 10px;
+}
+.productdetail .container .imgbox img{
+    width: 200px;
+    height: 180px;
+}
+.productdetail .container .info{
+    margin-top: 20px;
+    margin-left: 60px;
+}
+.productdetail .container .info h4{
+    color: #8a8a8a;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.productdetail .container .info p{
+   margin-top: 20px;
+   color: #8a8a8a;
+   font-size: 17px;
+}
+
+.productdetail .container .info h3{
+    margin-top: 10px;
+    font-size: 27px;
+ }
+
+ .productdetail .container .info button{
+    margin-top: 10px;
+    padding: 10px 30px;
+    border: none;
+    outline: none;
+    background: none;
+    background: black;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+ }

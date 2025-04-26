@@ -4,7 +4,7 @@ import { Link } from 'react-router'
 import Homeproducts from './Home-products'
 import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-function Home() {
+function Home({addtocart}) {
   // product category
   
   const [newproduct,setnewproduct]=useState([])
@@ -105,7 +105,7 @@ function Home() {
                   <div className="info">
                     <h4>{curr.name}</h4>
                     <p>{curr.price}</p>
-                    <button className='btn '>Add To Cart</button>
+                    <button className='btn ' onClick={()=>addtocart(curr)}>Add To Cart</button>
                   </div>
                 </div>
               )
@@ -210,7 +210,7 @@ function Home() {
                           <div className="icons">
                             <button><FaRegEye /></button>
                             <button><FaRegHeart /></button>
-                            <button><IoCartOutline /></button>
+                            <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
                           </div>
                         </div>
                       </div>
@@ -235,7 +235,7 @@ function Home() {
                           <div className="icons">
                             <button><FaRegEye /></button>
                             <button><FaRegHeart /></button>
-                            <button><IoCartOutline /></button>
+                            <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
                           </div>
                         </div>
                       </div>
@@ -260,7 +260,7 @@ function Home() {
                           <div className="icons">
                             <button><FaRegEye /></button>
                             <button><FaRegHeart /></button>
-                            <button><IoCartOutline /></button>
+                            <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
                           </div>
                         </div>
                       </div>

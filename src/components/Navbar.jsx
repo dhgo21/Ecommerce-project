@@ -30,7 +30,7 @@ function Navbar({search,setsearch,searchproduct}) {
                 <button onClick={searchproduct}><FaSearch /></button>
             </div>
             <div className="carticon">
-                <Badge badgeContent={4} color="primary" className='badge'>
+                <Badge badgeContent={1} color="primary" className='badge'>
                     <Link to="/cart" ><BsCart4 className='cart'/></Link>
                 </Badge>
             </div>
@@ -84,7 +84,7 @@ function Navbar({search,setsearch,searchproduct}) {
                     <li><Link to="/" className="link">Home</Link></li>
                     <li><Link to="/shop" className="link">Shop</Link></li>
                     <li><Link to="/about" className="link">About</Link></li>
-                    <li><Link to="/contact" className="link">Contact</Link></li>
+                    <li><Link to="https://forms.gle/jdKt75N1EBRGHPW3A" target="_black" className="link">Contact Us</Link></li>
                 </ul>
             </div>
             <div className="offer">
@@ -95,5 +95,5 @@ function Navbar({search,setsearch,searchproduct}) {
     </>
   )
 }
-
+// https://forms.gle/jdKt75N1EBRGHPW3A
 export default Navbar

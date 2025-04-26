@@ -89,11 +89,17 @@
     cursor: pointer;
     font-size: 24px;
 }
-.midheader .carticon .cart{
+.midheader .carticon{
     height: 30px;
     width: 30px;
     cursor: pointer;
+    color: black;
 }
+.cart {
+    font-size: 25px;
+    color: black;
+    height: 20px;
+  }  
 
 .header .lastheader {
     padding: 10px 10px;
