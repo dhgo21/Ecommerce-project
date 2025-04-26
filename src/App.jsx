@@ -1,5 +1,5 @@
 import './App.css'
-import Navbar from './components/navbar'
+import Navbar from './components/Navbar.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import Routing from './components/Routing'
 import Fotter from './components/Fotter'

@@ -74,7 +74,7 @@ function Fotter() {
                         <h4>Contact Us</h4>
                         <p>Jaipur, India</p>
                         <p>+91 0101010101</p>
-                        <p>swiftmart@gmail.com</p>
+                        <p>support@swiftmart.com</p>
                     </div>
                 </div>
             </div>

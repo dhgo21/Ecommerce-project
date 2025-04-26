@@ -4,9 +4,12 @@ import { Link } from 'react-router'
 import Homeproducts from './Home-products'
 import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 function Home({addtocart}) {
+  const [showdetail, setshowdetail] = useState(false);
+  const [detail, setdetail] = useState({});
+
   // product category
-  
   const [newproduct,setnewproduct]=useState([])
   const [featureproduct,setfeatureproduct]=useState([])
   const [topproduct,settopproduct]=useState([])
@@ -61,8 +64,33 @@ function Home({addtocart}) {
     setVisibleCount(prevCount => prevCount + 12); // increase count by 12 each time
   };
   const visibleproducts = tproducts.slice(0, visibleCount);
+
+  function detailpage(product) {
+    setdetail(product);
+    setshowdetail(true);
+  }
+  
   return (
     <>
+    {
+          showdetail && (
+          <div className="productdetail">
+            <button className='closebtn' onClick={() => setshowdetail(false)}><IoMdClose /></button>
+            <div className="container">
+              <div className="imgbox">
+                <img src={detail.image} alt="Product" />
+              </div>
+              <div className="info">
+                <h4>{detail.cat}</h4>
+                <h2>{detail.name}</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque natus excepturi sed cumque dicta?</p>
+                <h3>{detail.price}</h3>
+                <button onClick={() => addtocart(detail)}>Add to Cart</button>
+              </div>
+            </div>
+          </div>
+        )
+    }
     <div className="home">
         <div className="topbanner">
             <div className="contant">
@@ -95,7 +123,7 @@ function Home({addtocart}) {
                       <img src={curr.image} alt=''></img>
                     <div className="icon">
                       <div className="iconbox">
-                        <FaRegEye />
+                        <FaRegEye onClick={() => detailpage(curr)}/>
                       </div>
                       <div className="iconbox">
                         <FaRegHeart />
@@ -208,7 +236,7 @@ function Home({addtocart}) {
                           <h3>{curr.name}</h3>
                           <p>{curr.price}</p>
                           <div className="icons">
-                            <button><FaRegEye /></button>
+                            <button><FaRegEye onClick={() => detailpage(curr)} /></button>
                             <button><FaRegHeart /></button>
                             <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
                           </div>
@@ -233,7 +261,7 @@ function Home({addtocart}) {
                           <h3>{curr.name}</h3>
                           <p>{curr.price}</p>
                           <div className="icons">
-                            <button><FaRegEye /></button>
+                            <button><FaRegEye onClick={() => detailpage(curr)}/></button>
                             <button><FaRegHeart /></button>
                             <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
                           </div>
@@ -258,7 +286,7 @@ function Home({addtocart}) {
                           <h3>{curr.name}</h3>
                           <p>{curr.price}</p>
                           <div className="icons">
-                            <button><FaRegEye /></button>
+                            <button><FaRegEye onClick={() => detailpage(curr)}/></button>
                             <button><FaRegHeart /></button>
                             <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
                           </div>
