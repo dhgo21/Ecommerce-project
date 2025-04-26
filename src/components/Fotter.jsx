@@ -80,6 +80,9 @@ function Fotter() {
             </div>
         </div>
     </div>
+    <div className="patent">
+        <p>Copyright @ 2025 Dhruv Goyal</p>
+    </div>
     </>
   )
 }

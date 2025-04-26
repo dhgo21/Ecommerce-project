@@ -7,7 +7,7 @@ import "./Navbar.css"
 import { BsCart4 } from "react-icons/bs";
 import { CiLogout } from "react-icons/ci";
 import Badge from '@mui/material/Badge';
-function Navbar({search,setsearch,searchproduct}) {
+function Navbar({search,setsearch,searchproduct,cart}) {
     const { loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
 
   return (
@@ -30,8 +30,8 @@ function Navbar({search,setsearch,searchproduct}) {
                 <button onClick={searchproduct}><FaSearch /></button>
             </div>
             <div className="carticon">
-                <Badge badgeContent={1} color="primary" className='badge'>
-                    <Link to="/cart" ><BsCart4 className='cart'/></Link>
+                <Badge badgeContent={cart.length} color="primary" className='badge'>
+                    <Link to="/cart" ><BsCart4 className='cartlogo'/></Link>
                 </Badge>
             </div>
             {

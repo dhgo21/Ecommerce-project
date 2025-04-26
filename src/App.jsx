@@ -64,7 +64,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar search={search} setsearch={setsearch} searchproduct={searchproduct}/>
+        <Navbar search={search} setsearch={setsearch} searchproduct={searchproduct} cart={cart}/>
         <Routing setcart={setcart} cart={cart} shop={shop} Filter={Filter} allcatefilter={allcatefilter} addtocart={addtocart}/>
         <Fotter />
       </BrowserRouter>
