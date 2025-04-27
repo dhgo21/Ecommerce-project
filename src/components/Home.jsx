@@ -157,7 +157,7 @@ function Home({addtocart}) {
                 </div>
                 <div className="detail">
                   <div className="imgbox">
-                    <img src="/public/images/testimonial.png" alt="testimonial"></img>
+                    <img src="/images/testimonial.png" alt="testimonial"></img>
                   </div>
                   <div className="info">
                     <h3>Abcd</h3>
@@ -188,10 +188,10 @@ function Home({addtocart}) {
               </div>
               <div className="slider">
                 <div className="slides">
-                  <div className="slide"><img src="/public/images/bottomrightslider.svg" alt="slide1"></img></div>
-                  <div className="slide"><img src="/public/images/bottomrightslider1.svg" alt="slide2"></img></div>
-                  <div className="slide"><img src="/public/images/bottomrightslider2.svg" alt="slide3"></img></div>
-                  <div className="slide"><img src="/public/images/bottomrightslider3.svg" alt="slide4"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider.svg" alt="slide1"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider1.svg" alt="slide2"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider2.svg" alt="slide3"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider3.svg" alt="slide4"></img></div>
                 </div>
               </div>
             </div>
@@ -201,20 +201,20 @@ function Home({addtocart}) {
           <div className="container">
             <div className="leftbox">
               <div className="box">
-                <img src='/public/images/sliderimg1.svg'></img>
+                <img src='/images/sliderimg1.svg'></img>
               </div>
               <div className="box">
-                <img src='/public/images/sliderimg2.svg'></img>
+                <img src='/images/sliderimg2.svg'></img>
               </div>
             </div>
             <div className="rightbox">
               <div className="top">
-                <img src='/public/images/sliderimg3.svg'></img>
-                <img id="sliderimg4"src='/public/images/sliderimg4.svg'></img>
+                <img src='/images/sliderimg3.svg'></img>
+                <img id="sliderimg4"src='/images/sliderimg4.svg'></img>
               </div>
               <div className="bottom">
-                <img src='/public/images/sliderimg5.svg'></img>
-                <img id="slider6" src='/public/images/sliderimg6.png'></img>
+                <img src='/images/sliderimg5.svg'></img>
+                <img id="slider6" src='/images/sliderimg6.png'></img>
               </div>
             </div>
           </div>

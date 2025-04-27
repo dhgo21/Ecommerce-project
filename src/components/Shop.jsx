@@ -68,13 +68,13 @@ function Shop({shop,Filter,allcatefilter,addtocart}) {
                 </div>
                 <div className="banner">
                     <div className="img">
-                        <img src='/public/images/bottombanner1.svg'></img>
+                        <img src='/images/bottombanner1.svg'></img>
                     </div>
                 </div>
             </div>
             <div className="rightbox">
                 <div className="topbanner">
-                    <img src='/public/images/shoptopbanner.svg'></img>
+                    <img src='/images/shoptopbanner.svg'></img>
                 </div>
                 <div className="productbox">
                     <h2>Shop Product</h2>

@@ -23,7 +23,7 @@ function Navbar({search,setsearch,searchproduct,cart}) {
         </div>
         <div className="midheader">
             <div className="logo">
-                <img src="/public/images/smlogo.png"></img>
+                <img src="/images/smlogo.png"></img>
             </div>
             <div className="searchbox">
                 <input type="text" value={search} placeholder='Search' onChange={(e)=>setsearch(e.target.value)}></input>
