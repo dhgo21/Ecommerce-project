@@ -24,6 +24,9 @@ body
     width: 100%;
     align-items: center;
 }
+.cart .emptycart{
+    font-size: 250%;
+}
 .cart .emptycart h2{
     
     text-align: center;
@@ -54,10 +57,70 @@ body
 }
 .cart .container{
     max-width: 100%;
-    padding: 10px 20px;
+    padding: 10px 10px;
     /* border: 2px solid blue; */
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
+.cart .container .leftbox{
+    /* border: 1px solid black; */
+    height: calc(170px * 3);
+    width: 75%;
+    overflow-y: auto;
+    border-radius: 5px;
+    padding: 30px;
+}
+.cart .container .rightbox{
+    border: 2px solid black;
+    width: 330px;
+    padding: 10px 0px;
+    height: 260px;
+    border-radius: 5px;
+}
+table{
+    width: 100%;
+    /* border: 2px solid yellow; */
+    border-bottom: 2px dashed lightgray;
+}
+.totalprice{
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.totalprice table td{
+    padding-bottom: 10px;
+}
+table td{
+    padding-bottom: 20px;
+}
+.checkout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.checkout button{
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+.cart .container .rightbox .pricedetails{
+    padding: 10px;
+}
+.cart .container .rightbox .rightboxheading{
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+}
+span{
+    padding-left: 10px;
+    color: rgb(130, 130, 130);
+    /* font-weight: bold; */
+}
 .cart .container .box{
     width: 100%;
     display: flex;
@@ -118,6 +181,8 @@ body
 }
 .cart .container .box .detail .quantity button{
     padding: 10px 20px;
+    display: flex;
+    align-items: center;
     color: white;
     border: none;
     outline: none;
@@ -126,11 +191,11 @@ body
     height: 30px;
     border-radius: 3px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 22px;
 }
 .cart .container .box .detail .quantity input{
     height: 30px;
-    padding: 10px 20px;
+    padding-left: 10px;
     background: none;
     border: none;
     outline: none;
@@ -139,8 +204,10 @@ body
     font-size: 14px;
     font-weight: bold;
     border-radius: 3px;
-    width: 100px;
+    width: 50px;
     margin: 0px 5px;
+    text-align: center;
+    /* box-sizing: border-box; */
 }
 
 .cart .container .box .icon{
@@ -192,7 +259,8 @@ body
 @media (min-width:340px) and (max-width:600px)
 {   
     .cart .container{
-    min-width: 240%;
+    min-width: 270%;
+    padding: 0px;
     }
     .cart .container .box{
     width: 100%;
@@ -213,4 +281,28 @@ body
     .cart .bottom .total{
     width: 54%;
     }
+    .cart .container .box .imgbox img{
+    width: 100px;
+    height: 100px;
+}
+.cart .container .leftbox{
+    padding: 0px;
+}
+.cart .container .box .detail .info{
+    margin-top: 0px;
+    margin-left: 0px;
+}
+.cart .container .box .detail .info h3{
+    font-size: 15px;
+}
+.cart .container .box .detail .info p{
+    font-size: 15px;
+}
+.cart .container .rightbox{
+    border: 2px solid black;
+    width: 280px;
+    padding: 10px 0px;
+    height: 240px;
+    border-radius: 5px;
+}
 }

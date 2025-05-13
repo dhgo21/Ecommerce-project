@@ -62,6 +62,7 @@ body{
     max-width: 130%;
     display: flex;
     /* border: 6px solid green; */
+    
 }
 .trending .container .leftbox{
     padding: 10px 20px;
@@ -103,10 +104,12 @@ body{
     /* border: 1px solid black; */
 }
 .trending .container .leftbox .products .container{
-    max-width: 100%;
+    width: 103%;
     display: flex;
     flex-wrap: wrap; 
-    /* border: 10px solid blue; */
+    /* border: 2px solid blue; */
+    height: calc(330px * 3);
+    overflow-y: auto;
 }
 
 .products .showmorebttn{
@@ -474,11 +477,13 @@ body{
     overflow: hidden;
     border-radius: 5px;
     /* background: #fbe0e0; */
+    height: calc(170px * 3);
+    overflow-y: auto;
 }
-.home .producttype .container .box:hover{
+/* .home .producttype .container .box:hover{
     box-shadow: 0px 0px 7px 1px black;
     transition: 0.6s;
-}
+} */
 
 .home .producttype .container .box .header{
     width: 100%;
@@ -561,18 +566,28 @@ body{
   .newsletter{
     padding: 10px 10px;
  }
- .home .banners .container .leftbox .box img{
-    width: 200px;
+ .home .banners .container .leftbox{
+    width: 180px;
     height: 200px;
-}
+    margin-right: 10px;
+    }
+ .home .banners .container .leftbox .box img{
+    width: 180px;
+    height: 200px;
+    }
 .home .banners .container .rightbox .top img{
     width: 440px;
 }
 #sliderimg4{
-    width: 200px;
+    width: 180px;
 }
 #slider6{
     width: 60px;
+}
+.rightbox .bottom img{
+    width: 85%;
+    cursor: pointer;
+    border-radius: 10px;
 }
 .home .banners{
     padding: 10px 0px;
@@ -591,4 +606,9 @@ body{
 .home .producttype .container .box .productbox{
     margin-bottom: 24px;
 }
+}
+@media (min-width:345px) {
+    .home .producttype .container .box .productbox .icons{
+    margin-right: 0px;
+    }
 }
