@@ -9,7 +9,7 @@ body{
     width: 100%;
 }
 .home .topbanner{
-    max-width: 100%;
+    width: 100%;
     height: 500px;
     background: url("/images/slider.svg");
     background-size: cover;
@@ -23,7 +23,6 @@ body{
     top: 100px;
     left: 70px;
 }
-
 .home .topbanner .contant h3{
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 30px;
@@ -56,7 +55,7 @@ body{
 }
 
 .trending{
-    padding: 20px 0px 20px 30px;
+    padding: 20px 30px 20px 30px;
     width: 100%;
 }
 .trending .container{
@@ -82,6 +81,7 @@ body{
     color: #232323;
     cursor: pointer;
 }
+
 .trending .container .leftbox .header .cate{
     display: flex;
     margin-top: 5px;
@@ -384,6 +384,7 @@ body{
 .home .banners{
     padding: 20px 0px;
     width: 100%;
+    /* border: 2px solid blue; */
 }
 .home .banners .container{
     display: flex;
@@ -412,8 +413,9 @@ body{
     margin-bottom: 10px;
     width: 100%;
 }
+
 .home .banners .container .rightbox .top img{
-    width: 770px;
+    width: 730px;
     cursor: pointer;
     border-radius: 10px;
 }
@@ -530,4 +532,63 @@ body{
     transition: 0.4s;
     color: white;
     background: black;
+}
+@media (min-width:340px) and (max-width:600px){
+    .topbanner{
+    min-width: 240%;
+    height: 330px !important;
+    background-repeat: no-repeat;
+    
+    }
+    .home .topbanner .contant{
+    top: 30px;
+    left: 40px;
+    }
+    .home .topbanner .contant h2{
+        font-size: 33px;
+    }
+    .trending{
+    width: 240%;
+    padding-right: 5px;
+    padding-left: 5px;
+    }
+    .trending .container .leftbox {
+        padding: 0px;
+    }
+    .rightbox .container .testimonial .detail .imgbox img{
+    margin-left: 53px;
+ }
+  .newsletter{
+    padding: 10px 10px;
+ }
+ .home .banners .container .leftbox .box img{
+    width: 200px;
+    height: 200px;
+}
+.home .banners .container .rightbox .top img{
+    width: 440px;
+}
+#sliderimg4{
+    width: 200px;
+}
+#slider6{
+    width: 60px;
+}
+.home .banners{
+    padding: 10px 0px;
+}
+.home .banners .container .leftbox{
+    width: 26%;
+}
+.home .producttype{
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.home .producttype .container .box .productbox .imgbox img{
+    margin-right: 10px;
+    margin-left: 0px;
+}
+.home .producttype .container .box .productbox{
+    margin-bottom: 24px;
+}
 }

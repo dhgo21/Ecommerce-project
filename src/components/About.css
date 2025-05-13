@@ -1,8 +1,7 @@
-*
+body
 {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     font-family: sans-serif;
 }
 .about{
@@ -51,4 +50,14 @@
 
 .panel.active {
     margin-bottom: 20px;
+}
+
+@media (min-width:340px) and (max-width:600px)
+{
+    .about .container{
+    width: 100%;
+}
+.about{
+    width: 240%;
+}
 }

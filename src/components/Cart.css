@@ -1,9 +1,8 @@
-*
+body
 {
     margin: 0px;
     padding: 0px;
     font-family: sans-serif;
-    box-sizing: border-box;
 }
 .cart{
     width: 100%;
@@ -19,6 +18,7 @@
 }
 .cart-container{
     display: flex;
+    
 }
 .cart .emptycart{
     width: 100%;
@@ -55,6 +55,7 @@
 .cart .container{
     max-width: 100%;
     padding: 10px 20px;
+    /* border: 2px solid blue; */
 }
 
 .cart .container .box{
@@ -64,6 +65,7 @@
     height: 180px;
     margin-top: 10px;
     justify-content: space-around;
+    /* border: 2px solid yellow; */
 }
 
 .cart .container .box .imgbox{
@@ -185,4 +187,30 @@
 .cart .bottom .bottomwork button:hover{
     box-shadow: 0px 0px 2px 2px rgb(243, 132, 132);
     transition: 0.5s;
+}
+
+@media (min-width:340px) and (max-width:600px)
+{   
+    .cart .container{
+    min-width: 240%;
+    }
+    .cart .container .box{
+    width: 100%;
+    }
+    .cart .bottom{
+        display: flex;
+        justify-content: space-between;
+        width: 240%;
+    }
+    .cart .bottom .bottomwork{
+        display: flex;
+        justify-content: space-between;
+        width: 240%;
+    }
+    .cart .bottom .bottomwork .total{
+        width: 30%;
+    }
+    .cart .bottom .total{
+    width: 54%;
+    }
 }
