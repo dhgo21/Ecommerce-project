@@ -49,7 +49,7 @@ function Fotter() {
             <div className="rightbox">
                 <div className="top">
                     <div className="logo">
-                        <img src='/images/smlogo.png'></img>
+                        <img src="/images/smlogo.png"></img>
                     </div>
                     <div className="para">
                         <p>Shop smarter, not harder. We bring clean design, quality choices, and a seamless experience—so you get what you need, and nothing you don’t.</p>
