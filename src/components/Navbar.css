@@ -38,6 +38,16 @@
     mix-blend-mode: multiply;
     margin-left: 10px;
 }
+.pincode{
+    /* border: 2px solid black; */
+    text-align: center;
+}
+.pincode .locicon{
+    font-size: 25px;
+}
+.pincode .setting{
+    display: flex;
+}
 .header .midheader .searchbox input{
     padding: 10px 10px;
     outline: none;
@@ -65,7 +75,11 @@
     box-shadow: 0px 0px 5px 1px;
     transition: 0.5s;
 }
-
+.location #countries{
+    font-size: 16px;
+    border-radius: 3px;
+    padding: 5px;
+}
 .header .midheader .user{
     display: flex;
     margin-right: 30px;

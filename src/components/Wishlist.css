@@ -1,0 +1,95 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+.wishlist{
+    /* border: 2px solid red; */
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+}
+.wishlist h1{
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+.list{
+    font-size: 90px;
+}
+.wishlist h2{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+.wishlist button{
+    padding: 10px 30px;
+    margin-top: 10px;
+    background: black;
+    color: #cd176c;
+    border: none;
+    outline: none;
+    color: white;
+    /* border: 1px solid #fed700; */
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.wishlist button:hover{
+    color:red;
+    transition: 0.3s;
+}
+.wishlistItems{
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.whishbox{
+    border: 2px solid #d7d8da;
+    padding: 20px;
+    width: 230px;
+    margin-right: 20px;
+    border-radius: 5px;
+    background: rgb(247, 244, 244);
+    z-index: 1;
+    position: relative;
+}
+.whishbox:hover{
+    transform: scale(1.1);
+    transition: 0.4s;
+}
+.whishbox p{
+    text-align: left;
+    letter-spacing: 1px;
+}
+.whishbox h4{
+    letter-spacing: 1px;
+    text-align: left;
+    margin-bottom: 6px;
+}
+.whishbox img{
+    width: 150px;
+    height: 150px;
+    mix-blend-mode: multiply;
+    cursor: pointer;
+}
+.whishbox .cross{
+    z-index: 2;
+    position: absolute;
+    cursor: pointer;
+    left: 190px;
+}
+
+@media (min-width:340px) and (max-width:600px)
+{
+    .emptywishlist{
+        /* border: 2px solid green; */
+    }
+    .wishlist{
+    min-width: 240% !important;
+    }
+}

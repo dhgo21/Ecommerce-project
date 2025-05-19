@@ -1,24 +1,49 @@
 import React, { useState } from 'react'
 import "./Shop.css"
 import { FaRegEye, FaRegHeart} from "react-icons/fa";
-import { IoMdClose } from "react-icons/io";
-function Shop({shop,Filter,allcatefilter,addtocart}) {
+import { IoMdClose,IoMdHeart} from "react-icons/io";
+function Shop({
+    shop,
+    Filter,
+    allcatefilter,
+    addtocart,
+    wishlist,
+    wishlistedids,
+    setwishlistedids,
+    setwishlist
+    }) {
+        
     const [showdetail,setshowdetail]=useState(false)
     const [detail,setdetail]=useState([])
-    function detailpage(product)
-    {
-        const detaildata=([{product}])
-        const productdetail=detaildata[0]['product']
-        // console.log(productdetail);
-        setdetail(productdetail)
-        setshowdetail(true)
-    }
 
-    
+    function detailpage(product) {
+    setdetail(product);
+    setshowdetail(true);
+}
+
     function closedetail()
     {
         setshowdetail(false)
     }
+
+    function addtowishlist(product)
+  {
+    const present=wishlist.find((x=>x.id===product.id))
+    if(!present)
+    {
+      setwishlist([...wishlist,product])
+      setwishlistedids(prev => [...prev, product.id]);
+      alert("Product Added to Wishlist")
+    }
+  }
+
+  function removefromwishlist(product)
+  {
+    setwishlist(wishlist.filter(item => item.id !== product.id));
+    setwishlistedids(prev => prev.filter(id => id !== product.id));
+    alert("Product Removed from Wishlist")
+  }
+    
   return (
     <>
     {
@@ -70,6 +95,14 @@ function Shop({shop,Filter,allcatefilter,addtocart}) {
                     <div className="img">
                         <img src='/images/bottombanner1.svg'></img>
                     </div>
+                    <div className="slider">
+                <div className="slides">
+                  <div className="slide"><img src="/images/bottomrightslider.svg" alt="slide1"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider1.svg" alt="slide2"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider2.svg" alt="slide3"></img></div>
+                  <div className="slide"><img src="/images/bottomrightslider3.svg" alt="slide4"></img></div>
+                </div>
+              </div>
                 </div>
             </div>
             <div className="rightbox">
@@ -77,20 +110,21 @@ function Shop({shop,Filter,allcatefilter,addtocart}) {
                     <img src='/images/shoptopbanner.svg'></img>
                 </div>
                 <div className="productbox">
-                    <h2>Shop Product</h2>
+                    <h2 className='h'>Shop Product</h2>
                     <div className="productcontainer">
                         {
                             shop.map((curr,index)=>{
                                 return (
                                         <div className="box" key={curr.id}>
                                             <div className="imgbox">
-                                                <img src={curr.image} key={index}></img>
+                                                <img src={curr.image} key={index} onClick={()=> detailpage(curr)}></img>
                                                <div className="icon">
-                                                    <div className="iconbox">
-                                                        <FaRegEye onClick={()=> detailpage(curr)}/>
-                                                    </div>
-                                                    <div className="iconbox">
-                                                        <FaRegHeart />
+                                                    <div className="iconbox" onClick={() => {
+                                                        wishlist.some(item => item.id === curr.id)
+                                                        ? removefromwishlist(curr)
+                                                        : addtowishlist(curr);
+                                                        }}>
+                                                        {wishlistedids.includes(curr.id) ? (<IoMdHeart/> ): (<FaRegHeart/>)}                  
                                                     </div>
                                                 </div>
                                             </div>

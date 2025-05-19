@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import "./Home.css"
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import Homeproducts from './Home-products'
 import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
-import { IoMdClose } from "react-icons/io";
-function Home({addtocart}) {
+import { IoMdClose, IoMdHeart } from "react-icons/io";
+
+function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids,addtocartpopup,setaddtocartpopup,hidePopup,sethidePopup}) {
   const [showdetail, setshowdetail] = useState(false);
   const [detail, setdetail] = useState({});
 
+
+  // addto cart popup
+  
   // product category
   const [newproduct,setnewproduct]=useState([])
   const [featureproduct,setfeatureproduct]=useState([])
@@ -39,6 +43,26 @@ function Home({addtocart}) {
   useEffect(()=>{
     productcategory()
   },[])
+
+    useEffect(() => {
+    if (addtocartpopup) {
+      const hideTimer = setTimeout(() => {
+        sethidePopup(true); // start animation
+      }, 2500); // slide start at 2.5s
+
+      const closeTimer = setTimeout(() => {
+        setaddtocartpopup(false); // remove popup
+      }, 3000); // full hide after 3s
+
+      return () => {
+        clearTimeout(hideTimer);
+        clearTimeout(closeTimer);
+      };
+    }
+  }, [addtocartpopup]);
+
+
+
   function productcategory()
   { 
 
@@ -69,7 +93,30 @@ function Home({addtocart}) {
     setdetail(product);
     setshowdetail(true);
   }
-  
+
+  // add to wishlist
+  function addtowishlist(product)
+  {
+    const present=wishlist.find((x=>x.id===product.id))
+    if(!present)
+    {
+      setwishlist([...wishlist,product])
+      setwishlistedids(prev => [...prev, product.id]);
+      alert("Product Added to Wishlist")
+    }
+  }
+
+  function removefromwishlist(product)
+  {
+    setwishlist(wishlist.filter(item => item.id !== product.id));
+    setwishlistedids(prev => prev.filter(id => id !== product.id));
+    alert("Product Removed from Wishlist")
+  }
+
+  function handleokay()
+  {
+    setaddtocartpopup(false)
+  }
   return (
     <>
     {
@@ -120,13 +167,15 @@ function Home({addtocart}) {
               return(
                 <div className="box" key={curr.id}> 
                   <div className="imgbox">
-                      <img src={curr.image} alt=''></img>
+                      <img src={curr.image} alt='' onClick={() => detailpage(curr)}></img>
                     <div className="icon">
-                      <div className="iconbox">
-                        <FaRegEye onClick={() => detailpage(curr)}/>
-                      </div>
-                      <div className="iconbox">
-                        <FaRegHeart />
+
+                      <div className="iconbox" onClick={() => {
+                        wishlist.some(item => item.id === curr.id)
+                          ? removefromwishlist(curr)
+                          : addtowishlist(curr);
+                        }}>
+                        {wishlistedids.includes(curr.id) ? (<IoMdHeart/> ): (<FaRegHeart/>)}                  
                       </div>
                     </div>
                   </div>
@@ -186,12 +235,12 @@ function Home({addtocart}) {
                   </div>
                 </div>
               </div>
-              <div className="slider">
-                <div className="slides">
-                  <div className="slide"><img src="/images/bottomrightslider.svg" alt="slide1"></img></div>
-                  <div className="slide"><img src="/images/bottomrightslider1.svg" alt="slide2"></img></div>
-                  <div className="slide"><img src="/images/bottomrightslider2.svg" alt="slide3"></img></div>
-                  <div className="slide"><img src="/images/bottomrightslider3.svg" alt="slide4"></img></div>
+              <div className="sliders">
+                <div className="slidess">
+                  <div className="slidesss"><img src="/images/bottomrightslider.svg" alt="slide1"></img></div>
+                  <div className="slidesss"><img src="/images/bottomrightslider1.svg" alt="slide2"></img></div>
+                  <div className="slidesss"><img src="/images/bottomrightslider2.svg" alt="slide3"></img></div>
+                  <div className="slidesss"><img src="/images/bottomrightslider3.svg" alt="slide4"></img></div>
                 </div>
               </div>
             </div>
@@ -230,15 +279,22 @@ function Home({addtocart}) {
                   return(
                       <div className="productbox" key={curr.id}>
                         <div className="imgbox">
-                          <img src={curr.image}></img>
+                          <img src={curr.image}  onClick={() => detailpage(curr)} ></img>
                         </div>
                         <div className="detail">
                           <h3>{curr.name}</h3>
                           <p>{curr.price}</p>
                           <div className="icons">
-                            <button><FaRegEye onClick={() => detailpage(curr)} /></button>
-                            <button><FaRegHeart /></button>
-                            <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
+                            <div className="iconbox" onClick={() => {
+                              wishlist.some(item => item.id === curr.id)
+                              ? removefromwishlist(curr)
+                              : addtowishlist(curr);
+                              }}>
+                              {wishlistedids.includes(curr.id) ? (<IoMdHeart className='whish'/> ): (<FaRegHeart className='whish'/>)}                  
+                            </div>
+                            <div className="iconbox">
+                              <IoCartOutline className='button'onClick={()=>addtocart(curr)}/>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -255,15 +311,22 @@ function Home({addtocart}) {
                   return(
                       <div className="productbox" key={curr.id}>
                         <div className="imgbox">
-                          <img src={curr.image}></img>
+                          <img src={curr.image} onClick={() => detailpage(curr)}></img>
                         </div>
                         <div className="detail">
                           <h3>{curr.name}</h3>
                           <p>{curr.price}</p>
                           <div className="icons">
-                            <button><FaRegEye onClick={() => detailpage(curr)}/></button>
-                            <button><FaRegHeart /></button>
-                            <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
+                            <div className="iconbox" onClick={() => {
+                              wishlist.some(item => item.id === curr.id)
+                              ? removefromwishlist(curr)
+                              : addtowishlist(curr);
+                              }}>
+                              {wishlistedids.includes(curr.id) ? (<IoMdHeart className='whish'/> ): (<FaRegHeart className='whish'/>)}                  
+                            </div>
+                            <div className="iconbox">
+                              <IoCartOutline className='button'onClick={()=>addtocart(curr)}/>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -280,15 +343,22 @@ function Home({addtocart}) {
                   return(
                       <div className="productbox" key={curr.id}>
                         <div className="imgbox">
-                          <img src={curr.image}></img>
+                          <img src={curr.image} onClick={() => detailpage(curr)}></img>
                         </div>
                         <div className="detail">
                           <h3>{curr.name}</h3>
                           <p>{curr.price}</p>
                           <div className="icons">
-                            <button><FaRegEye onClick={() => detailpage(curr)}/></button>
-                            <button><FaRegHeart /></button>
-                            <button onClick={()=>addtocart(curr)}><IoCartOutline /></button>
+                            <div className="iconbox" onClick={() => {
+                              wishlist.some(item => item.id === curr.id)
+                              ? removefromwishlist(curr)
+                              : addtowishlist(curr);
+                              }}>
+                              {wishlistedids.includes(curr.id) ? (<IoMdHeart className='whish'/> ): (<FaRegHeart className='whish'/>)}                  
+                            </div>
+                            <div className="iconbox">
+                              <IoCartOutline className='button'onClick={()=>addtocart(curr)}/>
+                            </div>
                           </div>
                         </div>
                       </div>
@@ -300,6 +370,19 @@ function Home({addtocart}) {
         </div>
       </div>
     </div>
+    {
+      addtocartpopup && (
+        <div className={`addtocartpopup ${hidePopup ? "hide" : ""}`}>
+        <div className="popup">
+          <p>✅ Product added to cart!</p>
+          <div className="popupbttns">
+            <button onClick={handleokay}>Okay</button>
+            <Link to="/cart"><button>Go to cart</button></Link>
+          </div>
+        </div>
+      </div>
+      )
+    }
     </>
   )
 }

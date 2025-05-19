@@ -7,6 +7,7 @@ body{
 }
 .home{
     width: 100%;
+    z-index: 1;
 }
 .home .topbanner{
     width: 100%;
@@ -136,8 +137,9 @@ body{
     background: rgb(247, 244, 244);
 }
 .trending .container .leftbox .products .container .box:hover{
-    box-shadow: 0px 0px 10px 0px black;
+    /* box-shadow: 0px 0px 10px 0px black; */
     transition: 0.4s;
+    transform: scale(1.1);
 }
 
 .trending .container .leftbox .products .container .box .imgbox{
@@ -157,33 +159,35 @@ body{
     margin-top: 10px;
     border-radius: 10px;
     mix-blend-mode:multiply;
+    cursor: pointer;
 }
 
 .container .icon{
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
-    margin-left: 34%;
-    transition: 0.5s;
+    /* margin-top: 1px; */
+    /* margin-left: 34%;
+    transition: 0.5s; */
 }
-.container .box:hover .imgbox .icon{
+/* .container .box:hover .imgbox .icon{
     margin-left: 4%;
-}
+} */
 .container .icon .iconbox{
     padding: 10px 10px;
-    margin-top: 10px;
-    box-shadow: 0px 0px 3px 0px black;
+    margin-top: 6px;
+    /* box-shadow: 0px 0px 3px 0px black; */
     z-index: 1;
-    border-radius: 7px;
-    background: #fff;
+    /* border-radius: 7px; */
+    mix-blend-mode: multiply;
+    /* background: #fff; */
     transition: 0.5s;
     cursor: pointer;
     /* border: 2px solid black; */
 }
-.container .icon .iconbox:hover{
+/* .container .icon .iconbox:hover{
     color: #fff;
     background: black;
-}
+} */
 .box .info{
     padding: 10px;
 }
@@ -323,8 +327,9 @@ body{
     cursor: pointer;
  }
 
- .slider{
-    width: 100%;
+ .sliders{
+    width: 80%;
+    height: 300px;
     overflow-x: auto;
     display: flex;
     /* border: 2px solid rgb(202, 202, 204); */
@@ -334,20 +339,21 @@ body{
     box-shadow: 0px 0px 7px 0px black;
     cursor: pointer;
  }
- .slides{
+ .slidess{
     display: flex;
     width: calc(100% * 4);;
     padding: 0px;
+    /* width: 90px; */
     /* animation: scrollStep 8s steps(4) infinite; */
     animation: scrollStep 12s linear infinite;
 }
 
-.slide{
+.slidesss{
     flex: 0 0 100%;
     text-align: center;
 }
 		
-.slider img{
+.sliders img{
     width: 100%;
     height: 100%;
     display: block;
@@ -522,21 +528,89 @@ body{
 
 .home .producttype .container .box .productbox .icons{
     margin: 10px;
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    cursor: pointer;
+    /* border: 2px solid black; */
+    justify-content: space-evenly;
+    width: 100px;
 }
-.home .producttype .container .box .productbox .icons button{
-    padding: 7px;
+.home .producttype .container .box .productbox .icons .button{
+    /* padding: 7px; */
     margin: 5px;
     cursor: pointer;
-    font-size: 15px;
-    border-radius: 5px;
-    outline: none;
+    font-size: 28px;
+    /* border-radius: 5px; */
+    /* outline: none; */
 }
-
-.home .producttype .container .box .productbox .icons button:hover{
+.whish{
+    font-size: 22px;
+}
+/* .home .producttype .container .box .productbox .icons button:hover{
     box-shadow: 0px 0px 7px 1px black;
     transition: 0.4s;
     color: white;
     background: black;
+} */
+
+.addtocartpopup{
+    z-index: 2;
+    position: fixed;
+    background-color: rgb(237, 237, 237);
+    left: 70%;
+    right: 20%;
+    top: 40%;
+    bottom: 5%;
+    /* margin: auto; */
+    border: 1px solid black;
+    border-radius: 4px;
+    box-shadow: 0px 0px 6px 0px;
+    padding: 10px;
+    width: 280px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-50%);
+    animation: slideUp 0.5s ease-out forwards;
+    transition: all 0.5s ease;
+    opacity: 1;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.addtocartpopup.hide {
+  opacity: 0;
+  transform: translate(-50%, 100px);
+}
+.popup p{
+    font-size: 20px;
+}
+.popupbttns{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    justify-content: space-evenly;
+}
+.popupbttns button{
+    padding: 5px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+.popupbttns button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.4s;
 }
 @media (min-width:340px) and (max-width:600px){
     .topbanner{
@@ -606,6 +680,13 @@ body{
 .home .producttype .container .box .productbox{
     margin-bottom: 24px;
 }
+}
+.addtocartpopup{
+    top: 50%;
+    left: 35%;
+    bottom: 60%;
+    height: 100px;
+    width: 280px;
 }
 @media (min-width:345px) {
     .home .producttype .container .box .productbox .icons{

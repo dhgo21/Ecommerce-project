@@ -7,6 +7,7 @@ import "./Navbar.css"
 import { BsCart4 } from "react-icons/bs";
 import { CiLogout } from "react-icons/ci";
 import Badge from '@mui/material/Badge';
+import { MdOutlineLocationOn } from "react-icons/md";
 function Navbar({search,setsearch,searchproduct,cart}) {
     const { loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
 
@@ -24,6 +25,18 @@ function Navbar({search,setsearch,searchproduct,cart}) {
         <div className="midheader">
             <div className="logo">
                 <img src="/images/smlogo.png"></img>
+            </div>
+            <div className="pincode">
+                <p>Deliver to</p>
+                <div className="setting">
+                <MdOutlineLocationOn className='locicon'/> <select id="countries">
+                    <option>Agra</option>
+                    <option>Banglore</option>
+                    <option>Chandigarh</option>
+                    <option>Dehradun</option>
+                    <option>Etawa</option>
+                </select>
+                </div>
             </div>
             <div className="searchbox">
                 <input type="text" value={search} placeholder='Search' onChange={(e)=>setsearch(e.target.value)}></input>
@@ -84,6 +97,7 @@ function Navbar({search,setsearch,searchproduct,cart}) {
                     <li><Link to="/" className="link">Home</Link></li>
                     <li><Link to="/shop" className="link">Shop</Link></li>
                     <li><Link to="/about" className="link">About</Link></li>
+                    <li><Link to="/wishlist" className="link">Wishlist</Link></li>
                     <li><Link to="https://forms.gle/jdKt75N1EBRGHPW3A" target="_black" className="link">Contact Us</Link></li>
                 </ul>
             </div>

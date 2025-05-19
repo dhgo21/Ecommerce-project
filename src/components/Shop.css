@@ -14,6 +14,9 @@ body
     font-weight: 300;
     /* width: 16.5%; */
 }
+.shop .h{
+    margin-left: 30px;
+}
 .shop p{
     margin-top: 5px;
     color: #8a8a8a;
@@ -27,7 +30,8 @@ body
     margin-top: 20px;
 }
 .shop .container .leftbox{
-    width: 30%;
+    width: 18%;
+    /* border: 2px solid yellow; */
 }
 
 .shop .container .leftbox .category{
@@ -98,9 +102,37 @@ body
     width: 243px;
     border-radius: 10px;
 }
+
+.slider{
+    width: 174%;
+    overflow-x: auto;
+    display: flex;
+    /* border: 2px solid rgb(202, 202, 204); */
+    border-radius: 10px;
+    scrollbar-width: none;
+    margin-top: 40px;
+    box-shadow: 0px 0px 7px 0px black;
+    cursor: pointer;
+ }
+  .slides{
+    display: flex;
+    width: calc(100% * 4);;
+    padding: 0px;
+    animation: scrollStep 12s linear infinite;
+}
+.slide{
+    flex: 0 0 100%;
+    text-align: center;
+}
+.slider img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    /* margin-right: 10px; */
+}
 .shop .container .rightbox{
     width: 100%;
-    /* border: 2px solid blue; */
+    /* border: 2px solid red; */
 }
 .shop .container .rightbox .topbanner{
     width: 100%;
@@ -115,7 +147,14 @@ body
 .shop .container .productbox{
     width: 100%;
     /* border: 2px solid blue; */
+    overflow-y: auto;
+    height: calc(330px * 3);
     /* padding: 5px; */
+    margin-top: 20px;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; */
 }
 .shop .container .productbox h2{
     color: #232323;
@@ -129,12 +168,15 @@ body
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    /* border: 2px solid green; */
+    /* margin-top: 20px; */
+    justify-content: center;
+
 }
 
 .shop .container .productbox .productcontainer .box{
     width: 265.5px;
     /* height: 350px; */
-    overflow: hidden;
     border: 3px solid #d6d6d6;
     border-radius: 5px;
     margin-right: 15px;
@@ -144,8 +186,8 @@ body
 }
 
 .shop .container .productbox .productcontainer .box:hover{
-    box-shadow: 0px 0px 10px 0px black;
     transition: 0.4s;
+    transform: scale(1.1);
 }
 .shop .container .productbox .productcontainer .box .imgbox{
     width: 70%;
@@ -153,18 +195,7 @@ body
     object-fit: cover;
 }
 
-.shop .container .productbox .productcontainer .box .icon{
-    display: flex;
-    object-fit: cover;
-    flex-direction: column;
-    transition: 0.5s;
-    margin-top: 10px;
-    margin-left: 40%;
-}
 
-.shop .container .productbox .productcontainer .box:hover .imgbox .icon{
-    margin-left: 3%;
-}
 .productcontainer .box .info{
     padding: 10px;
     
@@ -201,8 +232,8 @@ body
 }
 
 .productdetail{
-    width: 900px;
-    height: 400px;
+    width: 800px;
+    height: 350px;
     position: fixed;
     margin-left: 340px;
     top: 140px;
@@ -275,24 +306,28 @@ body
 @media (min-width:340px) and (max-width:600px)
 {
     .shop .container .leftbox{
-        width: 99%;
+        width: 44%;
     }
     .shop .container .leftbox .category{
-        max-width: 92%;
+        min-width: 94%;
     }
     .shop .container .rightbox .topbanner{
         width: 100%;
         height: 100px !important;
     }
     .shop .container .productbox .productcontainer{
-        width: 240%;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        flex-wrap: wrap;
+        
     }
     .container .banner .img{
         /* border: 3px solid blue; */
-        width: 180%; 
+        width: 170%; 
     }
     .container .banner img{
-        width: 213px;
+        width: 203px;
     }  
     .shop{
         width: 150%;
@@ -300,18 +335,29 @@ body
         /* border: 2px solid red; */
     }
     .shop .container .productbox .productcontainer .box{
-    width: 235.5px;
+    width: 215.5px;
     margin-right: 15px;
     margin-top: 20px;
+    height: 320px;
 }
 .productcontainer .box .imgbox img{
     margin-left: 10px;
+    width: 150px;
+    
 }
 .productdetail{
-    width: 700px;
-    height: 400px;
-    margin-left: 140px;
-    top: 540px;
-
+    width: 60%;
+    height: 30%;
+    margin-left: 18%;
+    top: 37%;
+}
+.slider{
+    width: 149%;
+ }
+ .shop .container .productbox{
+    width: 230%;
+}
+.shop .container .leftbox .category{
+    width: 72%;
 }
 }

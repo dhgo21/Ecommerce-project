@@ -9,6 +9,14 @@ function App() {
   //add to cart
   const [cart,setcart]=useState([])
 
+
+  const [addtocartpopup,setaddtocartpopup] =useState(false)
+  const [hidePopup, sethidePopup] = useState(false);
+
+ // add to wishlist
+  const [wishlist,setwishlist]=useState([])
+  const [wishlistedids, setwishlistedids] = useState([]);
+
   const [shop,setshop]=useState(Homeproducts)
   const [search,setsearch]=useState('')
   //shop category filter
@@ -43,7 +51,6 @@ function App() {
   }
 }
   //add to cart
-  
   function addtocart(product)
   {
     
@@ -57,15 +64,18 @@ function App() {
     else
     {
       setcart([...cart,{...product, qty:1}])
-      alert("Product Added to Cart!.")
+      // alert("Product Added to Cart!.")
+      setaddtocartpopup(true)
+      sethidePopup(false);
     }
   }
-  console.log(cart); 
+  
+  
   return (
     <>
       <BrowserRouter>
         <Navbar search={search} setsearch={setsearch} searchproduct={searchproduct} cart={cart}/>
-        <Routing setcart={setcart} cart={cart} shop={shop} Filter={Filter} allcatefilter={allcatefilter} addtocart={addtocart}/>
+        <Routing setcart={setcart} cart={cart} shop={shop} Filter={Filter} allcatefilter={allcatefilter} addtocart={addtocart} wishlist={wishlist} setwishlist={setwishlist} wishlistedids={wishlistedids} setwishlistedids={setwishlistedids} addtocartpopup={addtocartpopup} setaddtocartpopup={setaddtocartpopup} hidePopup={hidePopup} sethidePopup={sethidePopup} />
         <Fotter />
       </BrowserRouter>
     </>
