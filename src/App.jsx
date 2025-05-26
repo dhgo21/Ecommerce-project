@@ -5,6 +5,7 @@ import Routing from './components/Routing'
 import Fotter from './components/Fotter'
 import Homeproducts from './components/Home-products'
 import { useState } from 'react'
+import { ToastContainer, toast } from 'react-toastify';
 function App() {
   //add to cart
   const [cart,setcart]=useState([])
@@ -59,12 +60,12 @@ function App() {
     })
     if(exist)
     {
-      alert("This product is already Added to cart")
+      toast.error("This Product is already in to Cart");
     }
     else
     {
       setcart([...cart,{...product, qty:1}])
-      // alert("Product Added to Cart!.")
+      toast.success("Product is added to Cart");
       setaddtocartpopup(true)
       sethidePopup(false);
     }
@@ -78,6 +79,11 @@ function App() {
         <Routing setcart={setcart} cart={cart} shop={shop} Filter={Filter} allcatefilter={allcatefilter} addtocart={addtocart} wishlist={wishlist} setwishlist={setwishlist} wishlistedids={wishlistedids} setwishlistedids={setwishlistedids} addtocartpopup={addtocartpopup} setaddtocartpopup={setaddtocartpopup} hidePopup={hidePopup} sethidePopup={sethidePopup} />
         <Fotter />
       </BrowserRouter>
+      <ToastContainer 
+        position="bottom-center"
+        autoClose={3000}
+        theme="dark"
+        className="toaster"/>
     </>
   )
 }

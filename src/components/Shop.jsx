@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./Shop.css"
 import { FaRegEye, FaRegHeart} from "react-icons/fa";
 import { IoMdClose,IoMdHeart} from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
 function Shop({
     shop,
     Filter,
@@ -33,7 +34,7 @@ function Shop({
     {
       setwishlist([...wishlist,product])
       setwishlistedids(prev => [...prev, product.id]);
-      alert("Product Added to Wishlist")
+      toast.success("Product added to Wishlist");
     }
   }
 
@@ -41,7 +42,7 @@ function Shop({
   {
     setwishlist(wishlist.filter(item => item.id !== product.id));
     setwishlistedids(prev => prev.filter(id => id !== product.id));
-    alert("Product Removed from Wishlist")
+    toast.warning("Product removed from Wishlist")
   }
     
   return (
@@ -93,7 +94,7 @@ function Shop({
                 </div>
                 <div className="banner">
                     <div className="img">
-                        <img src='/images/bottombanner1.svg'></img>
+                        <img src="/images/bottombanner1.svg"></img>
                     </div>
                     <div className="slider">
                 <div className="slides">
@@ -142,6 +143,7 @@ function Shop({
             </div>
         </div>
     </div>
+    
     </>
   )
 }

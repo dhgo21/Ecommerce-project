@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { CiViewList } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
+import { ToastContainer, toast } from 'react-toastify';
 function Wishlist({wishlist,setwishlist,addtocart,setwishlistedids}) {
 
   const [showdetail, setshowdetail] = useState(false);
@@ -14,6 +15,7 @@ function Wishlist({wishlist,setwishlist,addtocart,setwishlistedids}) {
     if (exist) {
       setwishlist(wishlist.filter((curr) => curr.id !== product.id));
       setwishlistedids(prev => prev.filter(id => id !== product.id));
+      toast.warning("Product removed from Wishlist")
     }
   }
 
@@ -77,6 +79,7 @@ function Wishlist({wishlist,setwishlist,addtocart,setwishlistedids}) {
     </div>
   )}
 </div>
+
     </>
   )
 }
