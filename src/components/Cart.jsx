@@ -7,7 +7,7 @@ function Cart({ cart, setcart }) {
 
     const [showdetail, setshowdetail] = useState(false);
         const [detail, setdetail] = useState({});
-
+  
   function inqty(product) {
     const exist = cart.find((x) => x.id === product.id);
     setcart(cart.map((curr) => {
@@ -39,7 +39,7 @@ const total = cart.reduce((price, item) => {
 }, 0);
 
 const formattedTotal = total.toLocaleString("en-IN");
-
+let gtotal=(total + 29).toLocaleString("en-IN")
 function detailpage(product)
     {
         const detaildata=([{product}])
@@ -140,13 +140,13 @@ function detailpage(product)
                       <tbody>
                         <tr>
                           <td>Total Amount</td>
-                          <td>₹{(total + 29).toLocaleString("en-IN")}</td>
+                          <td>₹{gtotal}</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <div className="checkout">
-                  <button>Checkout</button>
+                  <Link to="/checkout" state={{ gtotal: gtotal }}><button>Checkout</button></Link>
                 </div>
                 </div>
               </div>

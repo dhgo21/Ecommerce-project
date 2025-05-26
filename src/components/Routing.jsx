@@ -5,7 +5,9 @@ import Shop from './Shop'
 import Cart from './Cart'
 import About from './About'
 import Wishlist from './Wishlist'
-function Routing({shop,Filter,allcatefilter,cart,addtocart,setcart,wishlist,setwishlist,wishlistedids,setwishlistedids,removeproduct,addtocartpopup,setaddtocartpopup,hidePopup,sethidePopup,addtowishlist,removefromwishlist}) {
+import Checkout from './Checkout'
+import Orderdetails from './Orderdetails'
+function Routing({shop,Filter,allcatefilter,cart,addtocart,setcart,wishlist,setwishlist,wishlistedids,setwishlistedids,removeproduct}) {
   return (
     <>
     <Routes>
@@ -14,11 +16,7 @@ function Routing({shop,Filter,allcatefilter,cart,addtocart,setcart,wishlist,setw
           wishlist={wishlist}
           setwishlist={setwishlist}
           wishlistedids={wishlistedids}
-          setwishlistedids={setwishlistedids}
-          addtocartpopup={addtocartpopup}
-          setaddtocartpopup={setaddtocartpopup}
-          hidePopup={hidePopup}
-          sethidePopup={sethidePopup}/>}/>
+          setwishlistedids={setwishlistedids}/>}/>
 
         <Route path="/cart" element={<Cart
           cart={cart}
@@ -43,6 +41,9 @@ function Routing({shop,Filter,allcatefilter,cart,addtocart,setcart,wishlist,setw
           setwishlistedids={setwishlistedids}
           addtocart={addtocart}
           removeproduct={removeproduct}/>}/>
+
+        <Route path="/checkout" element={<Checkout />}></Route>
+        <Route path="/orderdetails" element={<Orderdetails cart={cart}/>}></Route>
     </Routes>
     </>
   )

@@ -6,7 +6,7 @@ import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutu
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdClose, IoMdHeart } from "react-icons/io";
 
-function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids,addtocartpopup,setaddtocartpopup,hidePopup,sethidePopup}) {
+function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
   const [showdetail, setshowdetail] = useState(false);
   const [detail, setdetail] = useState({});
 
@@ -44,22 +44,6 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids,add
     productcategory()
   },[])
 
-    useEffect(() => {
-    if (addtocartpopup) {
-      const hideTimer = setTimeout(() => {
-        sethidePopup(true); // start animation
-      }, 2500); // slide start at 2.5s
-
-      const closeTimer = setTimeout(() => {
-        setaddtocartpopup(false); // remove popup
-      }, 3000); // full hide after 3s
-
-      return () => {
-        clearTimeout(hideTimer);
-        clearTimeout(closeTimer);
-      };
-    }
-  }, [addtocartpopup]);
 
 
 
@@ -113,10 +97,10 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids,add
     alert("Product Removed from Wishlist")
   }
 
-  function handleokay()
-  {
-    setaddtocartpopup(false)
-  }
+  // function handleokay()
+  // {
+  //   setaddtocartpopup(false)
+  // }
   return (
     <>
     {
@@ -370,19 +354,6 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids,add
         </div>
       </div>
     </div>
-    {
-      addtocartpopup && (
-        <div className={`addtocartpopup ${hidePopup ? "hide" : ""}`}>
-        <div className="popup">
-          <p>✅ Product added to cart!</p>
-          <div className="popupbttns">
-            <button onClick={handleokay}>Okay</button>
-            <Link to="/cart"><button>Go to cart</button></Link>
-          </div>
-        </div>
-      </div>
-      )
-    }
     </>
   )
 }

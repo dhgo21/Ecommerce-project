@@ -1,0 +1,183 @@
+.orderdetails{
+    background-color: rgb(226, 226, 226);
+    /* border: 2px solid green; */
+    padding: 20px;
+    display: flex;
+    /* align-items: center; */
+    /* justify-content: center; */
+    justify-content: space-around;
+    flex-direction: row;
+}
+.wbox{
+    /* border: 2px solid rgb(109, 109, 109); */
+    /* padding: 10px; */
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.tophead{
+    border-bottom: 1px solid black;
+    letter-spacing: 1px;
+}
+.head-top{
+    padding: 20px;
+}
+.reciept{
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    letter-spacing: 1px;
+}
+.orderpro{
+    /* border: 2px solid rgb(237, 41, 41); */
+    overflow-y: auto;
+    height: calc(150px*3);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+.inforrrr{
+    border: 2px solid rgb(227, 227, 227);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+.topdiv{
+    /* border: 2px solid yellow; */
+    padding-left: 20px;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: space-between;
+    align-items: center;
+    letter-spacing: 1px;
+}
+.topdiv img{
+    width: 50px;
+}
+.bottomdiv{
+    /* border: 2px solid blue; */
+    display: flex;
+}
+.track{
+    /* border: 2px solid brown; */
+    padding: 10px;
+    width: 20%;
+}
+.toppp{
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 4px;
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  /* border: 2px solid cyan; */
+}
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background-color: #4caf50;
+  text-align: center;
+  line-height: 25px;
+  color: white;
+  font-weight: bold;
+}
+.bottomm{
+    /* border: 2px solid purple; */
+    display: flex;
+    justify-content: space-between;
+}
+.infor{
+    letter-spacing: 1px;
+    font-weight: normal;
+}
+.timeline{
+    display: flex;
+    flex-direction: column;
+    /* border: 2px solid red; */
+    width: 100%;
+}
+.orderinfor{
+    /* border: 2px solid rgb(109, 109, 109); */
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+.topheadings{
+    /* border: 2px solid rgb(109, 109, 109); */
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+.bottomheadings{
+    /* border: 2px solid rgb(109, 109, 109); */
+    border-radius: 10px;
+    margin-top: 20px;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    
+}
+.home-bttn{
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.shipadd{
+    border-bottom: 1px solid black;
+    padding: 10px;
+    letter-spacing: 1px;
+}
+.priceinfo{
+    padding: 10px;
+}
+.shipinfo{
+    padding: 10px;
+    letter-spacing: 1px;
+}
+.fname{
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.shipaddress{
+    margin-bottom: 5px;
+}
+.totalpay3{
+    padding-left: 50px;
+    padding-bottom: 7px;
+}
+.totalpaid{
+    margin-top: 10px;
+    border-top: 3px solid rgb(166, 166, 166);
+    padding: 6px;
+    /* border: 2px solid green; */
+    width: 100%;
+    letter-spacing: 1px;
+}
+.totalpay1{
+    font-size: 25px;
+    font-weight: bold;
+}
+.totalpay{
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 30px;
+}
+@media (min-width:340px) and (max-width:600px)
+{
+    .orderdetails{
+        width: 240%;
+}
+}
