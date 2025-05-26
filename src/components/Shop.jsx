@@ -3,6 +3,7 @@ import "./Shop.css"
 import { FaRegEye, FaRegHeart} from "react-icons/fa";
 import { IoMdClose,IoMdHeart} from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
+import Fotter from "../components/Fotter"
 function Shop({
     shop,
     Filter,
@@ -60,7 +61,7 @@ function Shop({
                     <h4>{detail.cat}</h4>
                     <h2>{detail.name}</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque natus excepturi sed cumque dicta? Debitis, accusantium consequatur omnis facere placeat porro. </p>
-                    <h3>{detail.price}</h3>
+                    <h3>${detail.price}</h3>
                     <button onClick={()=>addtocart(detail)}>Add to Cart</button>
                 </div>
             </div>
@@ -131,7 +132,7 @@ function Shop({
                                             </div>
                                             <div className="info">
                                                 <h4>{curr.name}</h4>
-                                                <p>{curr.price}</p>
+                                                <p>${curr.price}</p>
                                                 <button onClick={()=>addtocart(curr)} className='btn '>Add To Cart</button>
                                             </div>
                                         </div>
@@ -143,7 +144,7 @@ function Shop({
             </div>
         </div>
     </div>
-    
+    <Fotter />
     </>
   )
 }

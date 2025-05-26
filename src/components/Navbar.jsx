@@ -8,6 +8,11 @@ import { BsCart4 } from "react-icons/bs";
 import { CiLogout } from "react-icons/ci";
 import Badge from '@mui/material/Badge';
 import { MdOutlineLocationOn } from "react-icons/md";
+import { GoHome } from "react-icons/go";
+import { CiShop } from "react-icons/ci";
+import { LuInfo } from "react-icons/lu";
+import { CiHeart } from "react-icons/ci";
+import { MdOutlinePermContactCalendar } from "react-icons/md";
 function Navbar({search,setsearch,searchproduct,cart}) {
     const { loginWithRedirect, logout,user, isAuthenticated} = useAuth0();
 
@@ -94,11 +99,11 @@ function Navbar({search,setsearch,searchproduct,cart}) {
             </div>
             <div className="nav">
                 <ul>
-                    <li><Link to="/" className="link">Home</Link></li>
-                    <li><Link to="/shop" className="link">Shop</Link></li>
-                    <li><Link to="/about" className="link">About</Link></li>
-                    <li><Link to="/wishlist" className="link">Wishlist</Link></li>
-                    <li><Link to="https://forms.gle/jdKt75N1EBRGHPW3A" target="_black" className="link">Contact Us</Link></li>
+                    <li><Link to="/" className="link"><div className='nav1'><GoHome />Home</div></Link></li>
+                    <li><Link to="/shop" className="link"><div className='nav1'><CiShop />Shop</div></Link></li>
+                    <li><Link to="/about" className="link"><div className='nav1'><LuInfo />About</div></Link></li>
+                    <li><Link to="/wishlist" className="link"><div className='nav1'><CiHeart />Wishlist</div></Link></li>
+                    <li><Link to="https://forms.gle/jdKt75N1EBRGHPW3A" target="_black" className="link"><div className='nav1'><MdOutlinePermContactCalendar />Contact Us</div></Link></li>
                 </ul>
             </div>
             <div className="offer">

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./About.css"
 import { Link } from 'react-router-dom';
-
+import Fotter from "../components/Fotter"
 function About() {
   const [open, setOpen] = useState(null);
 
@@ -36,6 +36,7 @@ function About() {
   ]
 
   return (
+    <>
     <div className="about">
       <div className="container">
         {data.map((item, index) => (
@@ -50,6 +51,8 @@ function About() {
         ))}
       </div>
     </div>
+    <Fotter />
+    </>
   )
 }
 

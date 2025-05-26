@@ -5,6 +5,7 @@ import { CiViewList } from "react-icons/ci";
 import { RxCross1 } from "react-icons/rx";
 import { IoMdClose } from "react-icons/io";
 import { ToastContainer, toast } from 'react-toastify';
+import Fotter from "../components/Fotter"
 function Wishlist({wishlist,setwishlist,addtocart,setwishlistedids}) {
 
   const [showdetail, setshowdetail] = useState(false);
@@ -47,7 +48,7 @@ function Wishlist({wishlist,setwishlist,addtocart,setwishlistedids}) {
                     <h4>{detail.cat}</h4>
                     <h2>{detail.name}</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque natus excepturi sed cumque dicta? Debitis, accusantium consequatur omnis facere placeat porro. </p>
-                    <h3>{detail.price}</h3>
+                    <h3>${detail.price}</h3>
                     <button onClick={()=>addtocart(detail)}>Add to Cart</button>
                 </div>
             </div>
@@ -72,14 +73,14 @@ function Wishlist({wishlist,setwishlist,addtocart,setwishlistedids}) {
           <img src={item.image} onClick={() => detailpage(item)}/>
           <RxCross1 className='cross' onClick={() => removewhislistitems(item)}/>
           <h4>{item.name}</h4>
-          <p>{item.price}</p>
+          <p>${item.price}</p>
           <button className='btn ' onClick={()=>addtocart(item)}>Add To Cart</button>
         </div>
       )})}
     </div>
   )}
 </div>
-
+<Fotter />
     </>
   )
 }

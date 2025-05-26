@@ -5,7 +5,8 @@ import Homeproducts from './Home-products'
 import { FaRegEye, FaRegHeart, FaFacebook, FaTwitterSquare, FaInstagram, FaYoutube  } from "react-icons/fa";
 import { IoCartOutline } from "react-icons/io5";
 import { IoMdClose, IoMdHeart } from "react-icons/io";
-
+import Fotter from "../components/Fotter"
+import { ToastContainer, toast } from 'react-toastify';
 function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
   const [showdetail, setshowdetail] = useState(false);
   const [detail, setdetail] = useState({});
@@ -86,7 +87,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
     {
       setwishlist([...wishlist,product])
       setwishlistedids(prev => [...prev, product.id]);
-      alert("Product Added to Wishlist")
+      toast.success("Product added to Wishlist");
     }
   }
 
@@ -94,7 +95,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
   {
     setwishlist(wishlist.filter(item => item.id !== product.id));
     setwishlistedids(prev => prev.filter(id => id !== product.id));
-    alert("Product Removed from Wishlist")
+    toast.warn("Product removed from Wishlist");
   }
 
   // function handleokay()
@@ -115,7 +116,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
                 <h4>{detail.cat}</h4>
                 <h2>{detail.name}</h2>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque natus excepturi sed cumque dicta?</p>
-                <h3>{detail.price}</h3>
+                <h3>${detail.price}</h3>
                 <button onClick={() => addtocart(detail)}>Add to Cart</button>
               </div>
             </div>
@@ -165,7 +166,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
                   </div>
                   <div className="info">
                     <h4>{curr.name}</h4>
-                    <p>{curr.price}</p>
+                    <p>${curr.price}</p>
                     <button className='btn ' onClick={()=>addtocart(curr)}>Add To Cart</button>
                   </div>
                 </div>
@@ -267,7 +268,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
                         </div>
                         <div className="detail">
                           <h3>{curr.name}</h3>
-                          <p>{curr.price}</p>
+                          <p>${curr.price}</p>
                           <div className="icons">
                             <div className="iconbox" onClick={() => {
                               wishlist.some(item => item.id === curr.id)
@@ -299,7 +300,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
                         </div>
                         <div className="detail">
                           <h3>{curr.name}</h3>
-                          <p>{curr.price}</p>
+                          <p>${curr.price}</p>
                           <div className="icons">
                             <div className="iconbox" onClick={() => {
                               wishlist.some(item => item.id === curr.id)
@@ -331,7 +332,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
                         </div>
                         <div className="detail">
                           <h3>{curr.name}</h3>
-                          <p>{curr.price}</p>
+                          <p>${curr.price}</p>
                           <div className="icons">
                             <div className="iconbox" onClick={() => {
                               wishlist.some(item => item.id === curr.id)
@@ -354,6 +355,7 @@ function Home({addtocart,wishlist,setwishlist,wishlistedids,setwishlistedids}) {
         </div>
       </div>
     </div>
+    <Fotter />
     </>
   )
 }

@@ -38,7 +38,7 @@ function App() {
   {
   if(searchlength)
   {
-    alert("Please Search Something")
+    toast.error("Please Search Something");
     setshop(Homeproducts)
   }
   else
@@ -77,7 +77,7 @@ function App() {
       <BrowserRouter>
         <Navbar search={search} setsearch={setsearch} searchproduct={searchproduct} cart={cart}/>
         <Routing setcart={setcart} cart={cart} shop={shop} Filter={Filter} allcatefilter={allcatefilter} addtocart={addtocart} wishlist={wishlist} setwishlist={setwishlist} wishlistedids={wishlistedids} setwishlistedids={setwishlistedids} addtocartpopup={addtocartpopup} setaddtocartpopup={setaddtocartpopup} hidePopup={hidePopup} sethidePopup={sethidePopup} />
-        <Fotter />
+        {/* <Fotter /> */}
       </BrowserRouter>
       <ToastContainer 
         position="bottom-center"

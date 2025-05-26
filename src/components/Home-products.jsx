@@ -3,7 +3,7 @@ const Homeproducts=
     {
         id:1,
         name:"ASUS Vivobook Go 14",
-        price:"₹29,999/-",
+        price:495,
         image:'/images/home-products-images/image1.webp',
         cat:'laptop',
         type:"new"
@@ -11,7 +11,7 @@ const Homeproducts=
     {
         id:2,
         name:"Crucial NVMe M.2 SSD",
-        price:"₹5,646/-",
+        price:132,
         image:'/images/home-products-images/image2.webp',
         cat:'drive',
         type:"new"
@@ -19,7 +19,7 @@ const Homeproducts=
     {
         id:3,
         name:"Apple iPhone 15 Pro",
-        price:"₹55,999/-",
+        price:500,
         image:'/images/home-products-images/image3.webp',
         cat:'mobile',
         type:"new"
@@ -27,7 +27,7 @@ const Homeproducts=
     {
         id:4,
         name:"Seagate 2TB HDD",
-        price:"₹7,449/-",
+        price:150,
         image:'/images/home-products-images/image4.webp',
         cat:'drive',
         type:"new"
@@ -35,7 +35,7 @@ const Homeproducts=
     {
         id:5,
         name:"Zebronics transformer-M Mouse",
-        price:"₹299/-",
+        price:10,
         image:'/images/home-products-images/image5.webp',
         cat:'mouse',
         type:"feature"
@@ -43,7 +43,7 @@ const Homeproducts=
     {
         id:6,
         name:"OnePlus Nord CE 4 Lite 5G",
-        price:"₹17,999/-",
+        price:50,
         image:'/images/home-products-images/image6.webp',
         cat:'mobile',
         type:"feature"
@@ -51,7 +51,7 @@ const Homeproducts=
     {
         id:7,
         name:"Potronics 12W Bluetooth Speaker",
-        price:"₹949/-",
+        price:11,
         image:'/images/home-products-images/image7.webp',
         cat:'speaker',
         type:"feature"
@@ -59,7 +59,7 @@ const Homeproducts=
     {
         id:8,
         name:"boAt 22.5W Dual Port Charger",
-        price:"₹549/-",
+        price:7,
         image:'/images/home-products-images/image8.webp',
         cat:'charger',
         type:"feature"
@@ -67,7 +67,7 @@ const Homeproducts=
     {
         id:9,
         name:"Boult Audio True Wireless Earbuds",
-        price:"₹999/-",
+        price:12,
         image:'/images/home-products-images/image9.webp',
         cat:'earbuds',
         type:"top"
@@ -75,7 +75,7 @@ const Homeproducts=
     {
         id:10,
         name:"Fire-Boltt Ninja Call Pro Plus Smart Watch",
-        price:"₹1,199/-",
+        price:14,
         image:'/images/home-products-images/image10.webp',
         cat:'watche',
         type:"top"
@@ -83,7 +83,7 @@ const Homeproducts=
     {
         id:11,
         name:"LONGWAY Kiger Ceiling Fan",
-        price:"₹1,199/-",
+        price:250,
         image:'/images/home-products-images/image11.webp',
         cat:'fans',
         type:"top"
@@ -91,7 +91,7 @@ const Homeproducts=
     {
         id:12,
         name:"Wipro Orion 6w LED Table Lamp",
-        price:"₹799/-",
+        price:89,
         image:'/images/home-products-images/image12.webp',
         cat:'Night Lamps',
         type:"top"
@@ -99,7 +99,7 @@ const Homeproducts=
     {
         id:13,
         name:"SanDisk Ultra 64GB card",
-        price:"₹799/-",
+        price:250,
         image:'/images/home-products-images/image13.webp',
         cat:'drive',
         type:"new"
@@ -107,7 +107,7 @@ const Homeproducts=
     {
         id:14,
         name:"Acer Aspire Laptop",
-        price:"₹34,999/-",
+        price:550,
         image:'/images/home-products-images/image14.webp',
         cat:'laptop',
         type:"feature"
@@ -115,7 +115,7 @@ const Homeproducts=
     {
         id:15,
         name:"Samsung Galaxy M05",
-        price:"₹6,999/-",
+        price:200,
         image:'/images/home-products-images/image15.webp',
         cat:'mobile',
         type:"top"
@@ -123,7 +123,7 @@ const Homeproducts=
     {
         id:16,
         name:"Portronics Toad 101",
-        price:"₹399/-",
+        price:17,
         image:'/images/home-products-images/image16.webp',
         cat:'mouse',
         type:"top"
@@ -131,7 +131,7 @@ const Homeproducts=
     {
         id:17,
         name:"Lenovo 300 Wired USB Mouse",
-        price:"₹399/-",
+        price:25,
         image:'/images/home-products-images/image17.webp',
         cat:'mouse',
         type:"feature"
@@ -139,7 +139,7 @@ const Homeproducts=
     {
         id:18,
         name:"boAt Stone 193 Pro",
-        price:"₹3,999/-",
+        price:765,
         image:'/images/home-products-images/image18.webp',
         cat:'speaker',
         type:"new"
@@ -147,7 +147,7 @@ const Homeproducts=
     {
         id:19,
         name:"Mivi Roam 2 Bluetooth Speaker",
-        price:"₹799/-",
+        price:34,
         image:'/images/home-products-images/image19.webp',
         cat:'speaker',
         type:"new"
@@ -155,7 +155,7 @@ const Homeproducts=
     {
         id:20,
         name:"Candes Brio Turbo Fan",
-        price:"₹999/-",
+        price:155,
         image:'/images/home-products-images/image20.webp',
         cat:'fans',
         type:"feature"

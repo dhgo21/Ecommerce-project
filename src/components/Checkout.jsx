@@ -265,7 +265,7 @@ function Checkout() {
                     </div>
 
                     <div className="paybttn">
-                      <button className='ptp'>Proceed to Pay: ₹ {gtotal}</button>
+                      <button className='ptp'>Proceed to Pay: $ {gtotal}</button>
                     </div>
                   </div>
                 </form>

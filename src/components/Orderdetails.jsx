@@ -6,7 +6,7 @@ function Orderdetails({cart}) {
     const subtotal = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
     const gst = 123;
     const packfee=2
-    const totalWithGST = subtotal + gst;
+    const totalWithGST = subtotal + gst+packfee;
 
     const location = useLocation();
     const firstname = location.state?.firstname || 'Guest';

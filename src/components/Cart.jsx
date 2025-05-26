@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { IoMdClose } from "react-icons/io";
 import { IoCart } from "react-icons/io5";
 import { useState } from "react";
+import Fotter from "../components/Fotter"
 function Cart({ cart, setcart }) {
 
     const [showdetail, setshowdetail] = useState(false);
@@ -33,13 +34,6 @@ function Cart({ cart, setcart }) {
     }
   }
 
-const total = cart.reduce((price, item) => {
-  const numericPrice = Number(item.price.replace(/[^0-9]/g, ""));
-  return price + item.qty * numericPrice;
-}, 0);
-
-const formattedTotal = total.toLocaleString("en-IN");
-let gtotal=(total + 29).toLocaleString("en-IN")
 function detailpage(product)
     {
         const detaildata=([{product}])
@@ -53,6 +47,9 @@ function detailpage(product)
     {
         setshowdetail(false)
     }
+    const totalCartPrice = cart.reduce((acc, item) => acc + item.price * item.qty, 0);
+    const totalamount=totalCartPrice+2+123
+    const gst = 123;
   return (
     <>
     {
@@ -87,9 +84,7 @@ function detailpage(product)
         <div className="container">
           <div className="leftbox">
           {cart.map((curr) => {
-            const numericPrice = Number(curr.price.replace(/[^0-9]/g, ""));
-            const totalPrice = numericPrice * curr.qty;
-            const formattedPrice = totalPrice.toLocaleString("en-IN");
+            const totalPrice = curr.price * curr.qty;
             return (
               <>
                 <div className="box" key={curr.id}>
@@ -100,7 +95,7 @@ function detailpage(product)
                     <div className="info">
                       <h4>{curr.cat}</h4>
                       <h3>{curr.name}</h3>
-                      <p>Price ({curr.qty} Quantity): {formattedPrice}</p>
+                      <p>Price ({curr.qty} Quantity): ${totalPrice}</p>
                     </div>
                     <div className="quantity">
                       <button onClick={() => decqty(curr)}>-</button>
@@ -127,11 +122,15 @@ function detailpage(product)
                     <tbody>
                       <tr>
                         <td>Price ({cart.length} item)</td>
-                        <td>₹{formattedTotal}</td>
+                        <td>${totalCartPrice}</td>
+                      </tr>
+                      <tr>
+                        <td>GST 18%:</td>
+                        <td> ${gst}</td>
                       </tr>
                       <tr>
                         <td>Packaging Fee</td>
-                        <td>₹29</td>
+                        <td>$2</td>
                       </tr>
                     </tbody>
                   </table>
@@ -140,13 +139,13 @@ function detailpage(product)
                       <tbody>
                         <tr>
                           <td>Total Amount</td>
-                          <td>₹{gtotal}</td>
+                          <td>${totalamount}</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <div className="checkout">
-                  <Link to="/checkout" state={{ gtotal: gtotal }}><button>Checkout</button></Link>
+                  <Link to="/checkout" state={{ gtotal:  totalamount}} ><button>Checkout</button></Link>
                 </div>
                 </div>
               </div>
@@ -154,6 +153,7 @@ function detailpage(product)
           }
         </div>
       </div>
+      <Fotter />
     </>
   );
 }

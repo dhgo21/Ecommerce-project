@@ -4,6 +4,14 @@
     padding: 0;
     font-family: sans-serif;
 }
+.nav1{
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    width: 105%;
+    /* border: 2px solid white; */
+    justify-content: space-between;
+}
 .header{
     width: 100%;
 }
@@ -172,5 +180,8 @@ font-weight: bold;
     }
     .header .lastheader {
     min-width: 240%;
+}
+.nav1{
+    font-size: 15px;
 }
 }
