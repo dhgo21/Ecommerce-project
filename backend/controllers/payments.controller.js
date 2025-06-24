@@ -16,7 +16,7 @@ const createOrder = async (req, res) => {
   }
 
   const options = {
-    amount: amount * 100, // razor accept as 100.00 so if we send 100 it will change to 1.00 thats why we ae doing so
+    amount: amount ? amount * 100 : 100, // razor accept as 100.00 so if we send 100 it will change to 1.00 thats why we ae doing so
     currency: "INR",
     receipt: `receipt_order_1`,
   };
