@@ -23,7 +23,6 @@
 
 
 import express from "express";
-import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config(); // 👈 this loads .env
 import cors from "cors";
