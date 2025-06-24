@@ -1,3 +1,4 @@
+![smlogo](https://github.com/user-attachments/assets/5e076fd1-2064-45e0-9099-75132444c6cd)
 
 # SwiftMart – E-Commerce Web App
 
