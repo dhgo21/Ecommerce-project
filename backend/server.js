@@ -26,8 +26,10 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 dotenv.config(); // 👈 this loads .env
+import cors from "cors";
 import router from "./Routes/payments.routes.js"; // ✅ correct path
 
+app.use(cors()); // ✅ important for Netlify -> Render connection
 const app = express();
 const port = 4000;
 

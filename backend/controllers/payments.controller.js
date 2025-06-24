@@ -3,6 +3,8 @@ import crypto from "crypto";
 const razorPayInstance = createRazorPayInstance();
 
 const createOrder = async (req, res) => {
+  console.log("Incoming payment request >>>", req.body);
+
   // Do not accept amount like this from client
   const { courseId, amount } = req.body;
 
@@ -16,7 +18,7 @@ const createOrder = async (req, res) => {
   }
 
   const options = {
-    amount: amount ? amount * 100 : 100, // razor accept as 100.00 so if we send 100 it will change to 1.00 thats why we ae doing so
+    amount: amount * 100, // razor accept as 100.00 so if we send 100 it will change to 1.00 thats why we ae doing so
     currency: "INR",
     receipt: `receipt_order_1`,
   };
