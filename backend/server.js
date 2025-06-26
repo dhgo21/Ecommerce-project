@@ -35,11 +35,11 @@ const port = 4000;
 app.use(express.json()); // ✅ parses JSON bodies
 app.use(cors());
 
-app.use("/api", router); // ✅ connects all /api routes
+app.use("/", router); // ✅ connects all /api routes
 app.use(cors()); // ✅ important for Netlify -> Render connection
-app.get("/", (req, res) => {
-  res.send("hello");
-});
+// app.get("/", (req, res) => {
+//   res.send("hello");
+// });
 
 app.listen(port, () => {
   console.log(`App is listening at port : http://localhost:${port}`);

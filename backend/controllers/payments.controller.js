@@ -9,7 +9,6 @@ const createOrder = async (req, res) => {
   const { courseId, amount } = req.body;
 
   //   checks
-
   if (!amount) {
     return res.status(400).json({
       success: false,

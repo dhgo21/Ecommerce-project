@@ -19,9 +19,6 @@ function Checkout() {
     formState: { errors }
   } = useForm();
 
-  function onAddressSubmit(data) {
-    console.log("Address submitted:", data);
-  }
   useEffect(() => {
   const script = document.createElement("script");
   script.src = "https://checkout.razorpay.com/v1/checkout.js";
@@ -93,14 +90,13 @@ function Checkout() {
 
   
 }
-
   return (
     <>
       <div className="paymentpage">
         <div className="paymentinfo">
           <h2>Delivery Address</h2>
           <h3 className='pd'>Personal Details:-</h3>
-          <form onSubmit={handleSubmit(onAddressSubmit)}>
+          <form onSubmit={handleSubmit(onPaymentSubmit)}>
             <div className="form">
               <div className="inputss">
                 <label>First Name:<span>*</span></label>
@@ -234,97 +230,9 @@ function Checkout() {
             </div>
 
             <div className="adddddd">
-              <button className='add-btnn'>Add Details</button>
+              <button className='ptp'>Proceed to Pay: $ {gtotal}</button>
             </div>
           </form>
-        </div>
-
-        <div className="payment">
-          <div className="pay">
-            <h2>Payment Options</h2>
-          </div>
-
-          <div className="boxes">
-            <div className="lbox">
-              <table>
-                <tbody>
-                  <tr><td className='paymentdd'><b>CC/DC</b></td></tr>
-                  <tr><td className='paymentdd'>Netbanking</td></tr>
-                  <tr><td className='paymentdd'>UPI</td></tr>
-                  <tr><td className='paymentdd'>Wallet</td></tr>
-                  <tr><td className='paymentdd'>Pay Later</td></tr>
-                  <tr><td className='paymentdd'>COD</td></tr>
-                </tbody>
-              </table>
-            </div>
-
-            <div className="rbox">
-              <div className="card">
-                <h3>Enter Card Details</h3>
-                <form onSubmit={handleSubmit(onPaymentSubmit)}>
-                  <div className="details">
-                    <label>Card Number:<span>*</span></label>
-                    <input
-                        className='inp'
-                        maxLength={12}
-                        {...register("cardnumber", {
-                            required: "Card Number is required",
-                            pattern: {
-                            value: /^\d{12}$/,
-                            message: "Invalid Card Number"
-                            }
-                        })}
-                        onKeyPress={(e) => {
-                        if (!/[0-9]/.test(e.key)) {
-                        e.preventDefault();
-                        }
-                        }}
-                        />
-                    {errors.cardnumber && <p className='error'>{errors.cardnumber.message}</p>}
-
-                    <div className="ccdetails">
-                      <div className="dd1">
-                        <label>Valid Thru:<span>*</span></label>
-                        <input
-                          type='month'
-                          className='valid'
-                          {...register("validthru", {
-                            required: "Expiry date is required"
-                          })}
-                        />
-                        {errors.validthru && <p className='error'>{errors.validthru.message}</p>}
-                      </div>
-
-                      <div className="dd2">
-                        <label>CVV:<span>*</span></label>
-                        <input
-                          className='cvv'
-                          maxLength={3}
-                          {...register("cvv", {
-                            required: "CVV is required",
-                            pattern: {
-                            value: /^\d{3}$/,
-                            message: "Invalid Card Number"
-                            }
-                        })}
-                          onKeyPress={(e) => {
-                        if (!/[0-9]/.test(e.key)) {
-                        e.preventDefault();
-                        }
-                        }}
-                        />
-                        {errors.cvv && <p className='error'>{errors.cvv.message}</p>}
-                      </div>
-                    </div>
-
-                    <div className="paybttn">
-                      <button className='ptp'>Proceed to Pay: $ {gtotal}</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
