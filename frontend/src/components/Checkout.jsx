@@ -29,9 +29,9 @@ function Checkout() {
 
   async function onPaymentSubmit(data) {
   // Backend call to get order_id
-  // if running on local host then "http://localhost:4000/api/create-order"
-  // if running on render website then "https://ecommerce-project-9tt9.onrender.com/api/create-order"
-  const res = await fetch("https://ecommerce-project-9tt9.onrender.com/api/create-order", {
+  // if running on local host then "http://localhost:4000/create-order"
+  // if running on render website then "https://ecommerce-project-9tt9.onrender.com/create-order"
+  const res = await fetch("http://localhost:4000/create-order", {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
